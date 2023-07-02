@@ -1,0 +1,93 @@
+dependencies:
+  ::serv:1.2.1: []
+  ::servant:1.2.1:
+  - ::serv:1.2.1
+files:
+- core: ::serv:1.2.1
+  file_type: vlt
+  name: src/serv_1.2.1/data/verilator_waiver.vlt
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_bufreg.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_bufreg2.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_alu.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_csr.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_ctrl.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_decode.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_immdec.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_mem_if.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_rf_if.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_rf_ram_if.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_rf_ram.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_state.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_top.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_rf_top.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_aligner.v
+- core: ::serv:1.2.1
+  file_type: verilogSource
+  name: src/serv_1.2.1/rtl/serv_compdec.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_clock_gen.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_timer.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_gpio.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_arbiter.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_mux.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant_ram.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/servant/servant.v
+flow_options: {}
+hooks: {}
+name: servant_1.2.1
+parameters:
+  RISCV_FORMAL:
+    datatype: bool
+    paramtype: vlogdefine
+  SERV_CLEAR_RAM:
+    datatype: bool
+    paramtype: vlogdefine
+tool_options:
+  verilator:
+    mode: lint-only
+toplevel: servant
+version: 0.2.1
+vpi: []

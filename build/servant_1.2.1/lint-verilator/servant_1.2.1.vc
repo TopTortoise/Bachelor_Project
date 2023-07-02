@@ -1,0 +1,29 @@
+--Mdir .
+--lint-only
+src/serv_1.2.1/data/verilator_waiver.vlt
+src/serv_1.2.1/rtl/serv_bufreg.v
+src/serv_1.2.1/rtl/serv_bufreg2.v
+src/serv_1.2.1/rtl/serv_alu.v
+src/serv_1.2.1/rtl/serv_csr.v
+src/serv_1.2.1/rtl/serv_ctrl.v
+src/serv_1.2.1/rtl/serv_decode.v
+src/serv_1.2.1/rtl/serv_immdec.v
+src/serv_1.2.1/rtl/serv_mem_if.v
+src/serv_1.2.1/rtl/serv_rf_if.v
+src/serv_1.2.1/rtl/serv_rf_ram_if.v
+src/serv_1.2.1/rtl/serv_rf_ram.v
+src/serv_1.2.1/rtl/serv_state.v
+src/serv_1.2.1/rtl/serv_top.v
+src/serv_1.2.1/rtl/serv_rf_top.v
+src/serv_1.2.1/rtl/serv_aligner.v
+src/serv_1.2.1/rtl/serv_compdec.v
+src/servant_1.2.1/servant/servant_clock_gen.v
+src/servant_1.2.1/servant/servant_timer.v
+src/servant_1.2.1/servant/servant_gpio.v
+src/servant_1.2.1/servant/servant_arbiter.v
+src/servant_1.2.1/servant/servant_mux.v
+src/servant_1.2.1/servant/servant_ram.v
+src/servant_1.2.1/servant/servant.v
+--top-module servant
+--exe
+
