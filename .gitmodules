@@ -1,7 +1,0 @@
-[submodule "fusesoc_libraries/fusesoc_cores"]
-    path = fusesoc_libraries/fusesoc_cores
-    url = https://github.com/fusesoc/fusesoc-cores
-[submodule "fusesoc_libraries/serv"]
-    path = fusesoc_libraries/serv
-    url = https://github.com/olofk/serv
- 
