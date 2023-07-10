@@ -1,0 +1,16 @@
+# 12 MHz clock input
+set_io i_clk 	21
+
+# Onboard LED (Green)
+set_io q 			  95
+set_io q1[0]          96
+set_io q1[1]          97
+set_io q1[2]          98
+set_io q1[3]          99
+
+#UART
+set_io i_data         80
+set_io o_data         79
+
+# UART TX Computer
+set_io to_pc			8
