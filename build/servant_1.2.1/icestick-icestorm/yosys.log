@@ -363,8 +363,13 @@ Storing AST representation for module `$abstract\service'.
 Successfully finished Verilog frontend.
 
 28. Executing AST frontend in derive mode using pre-parsed AST for module `\service'.
+<<<<<<< HEAD
 Parameter \memfile = 112'0111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
 Generating RTLIL representation for module `$paramod$3dc027ca909afab6cac7cce94d11212d8da34e8c\service'.
+=======
+Parameter \memfile = 448'0010111101101000011011110110110101100101001011110111000001100001011101010110110000101111011100110110010101110010011101100010111101100110011101010111001101100101011100110110111101100011010111110110110001101001011000100111001001100001011100100110100101100101011100110010111101110011011001010111001001110110001011110111001101110111001011110111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
+Generating RTLIL representation for module `$paramod$e8de6df17cd5cb4ef3b1bd6c4e9ad0e59bffa785\service'.
+>>>>>>> master
 Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/servant/service.v:169.
 Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/servant/service.v:174.
 Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/servant/service.v:175.
@@ -459,6 +464,7 @@ Generating RTLIL representation for module `\uart_rx'.
 31.3.4. Executing AST frontend in derive mode using pre-parsed AST for module `\servant_ram'.
 Parameter \depth = 7168
 Parameter \RESET_STRATEGY = 1296649801
+<<<<<<< HEAD
 Parameter \memfile = 112'0111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
 Generating RTLIL representation for module `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram'.
 Preloading $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram from simple_BLE.hex
@@ -467,6 +473,16 @@ Preloading $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram from si
 Parameter \memfile = 112'0111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
 Parameter \memsize = 7168
 Generating RTLIL representation for module `$paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant'.
+=======
+Parameter \memfile = 448'0010111101101000011011110110110101100101001011110111000001100001011101010110110000101111011100110110010101110010011101100010111101100110011101010111001101100101011100110110111101100011010111110110110001101001011000100111001001100001011100100110100101100101011100110010111101110011011001010111001001110110001011110111001101110111001011110111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
+Generating RTLIL representation for module `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram'.
+Preloading $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram from /home/paul/serv/fusesoc_libraries/serv/sw/simple_BLE.hex
+
+31.3.5. Executing AST frontend in derive mode using pre-parsed AST for module `\servant'.
+Parameter \memfile = 448'0010111101101000011011110110110101100101001011110111000001100001011101010110110000101111011100110110010101110010011101100010111101100110011101010111001101100101011100110110111101100011010111110110110001101001011000100111001001100001011100100110100101100101011100110010111101110011011001010111001001110110001011110111001101110111001011110111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
+Parameter \memsize = 7168
+Generating RTLIL representation for module `$paramod$c5785aca136200f0b267002c03e454e095a89f25\servant'.
+>>>>>>> master
 
 31.3.6. Executing AST frontend in derive mode using pre-parsed AST for module `\servant_clock_gen'.
 Parameter \PLL = 80'01001001010000110100010100110100001100000101111101000011010011110101001001000101
@@ -476,8 +492,13 @@ Generating RTLIL representation for module `$paramod$0433322fa94b7eb73a1cac7cc40
 Top module:  \service
 Used module:     \uart_tx
 Used module:     \uart_rx
+<<<<<<< HEAD
 Used module:     $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram
 Used module:     $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant
+=======
+Used module:     $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram
+Used module:     $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant
+>>>>>>> master
 Used module:     $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\servant_clock_gen
 
 31.3.8. Executing AST frontend in derive mode using pre-parsed AST for module `\servant_timer'.
@@ -514,8 +535,13 @@ Generating RTLIL representation for module `$paramod$0433322fa94b7eb73a1cac7cc40
 Top module:  \service
 Used module:     \uart_tx
 Used module:     \uart_rx
+<<<<<<< HEAD
 Used module:     $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram
 Used module:     $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant
+=======
+Used module:     $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram
+Used module:     $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant
+>>>>>>> master
 Used module:         $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801
 Used module:         $paramod$0f2b8312cc11a2c944705af7e400629663b7037c\serv_rf_top
 Used module:         \servant_gpio
@@ -549,8 +575,13 @@ Generating RTLIL representation for module `$paramod\serv_rf_ram_if\width=2\rese
 Top module:  \service
 Used module:     \uart_tx
 Used module:     \uart_rx
+<<<<<<< HEAD
 Used module:     $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram
 Used module:     $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant
+=======
+Used module:     $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram
+Used module:     $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant
+>>>>>>> master
 Used module:         $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801
 Used module:         $paramod$0f2b8312cc11a2c944705af7e400629663b7037c\serv_rf_top
 Used module:             $paramod$c4ea62c059c8afe4f863648afd023e4dbaeae79c\serv_top
@@ -609,8 +640,13 @@ Generating RTLIL representation for module `$paramod\serv_state\RESET_STRATEGY=1
 Top module:  \service
 Used module:     \uart_tx
 Used module:     \uart_rx
+<<<<<<< HEAD
 Used module:     $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram
 Used module:     $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant
+=======
+Used module:     $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram
+Used module:     $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant
+>>>>>>> master
 Used module:         $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801
 Used module:         $paramod$0f2b8312cc11a2c944705af7e400629663b7037c\serv_rf_top
 Used module:             $paramod$c4ea62c059c8afe4f863648afd023e4dbaeae79c\serv_top
@@ -636,8 +672,13 @@ Used module:         $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\ice40_pll
 Top module:  \service
 Used module:     \uart_tx
 Used module:     \uart_rx
+<<<<<<< HEAD
 Used module:     $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram
 Used module:     $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant
+=======
+Used module:     $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram
+Used module:     $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant
+>>>>>>> master
 Used module:         $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801
 Used module:         $paramod$0f2b8312cc11a2c944705af7e400629663b7037c\serv_rf_top
 Used module:             $paramod$c4ea62c059c8afe4f863648afd023e4dbaeae79c\serv_top
@@ -697,13 +738,22 @@ Removing empty process `$paramod\serv_ctrl\RESET_STRATEGY=1296649801\RESET_PC=0\
 Found and cleaned up 1 empty switch in `$paramod\serv_ctrl\RESET_STRATEGY=1296649801\RESET_PC=0\WITH_CSR=1.$proc$src/serv_1.2.1/rtl/serv_ctrl.v:71$404'.
 Found and cleaned up 1 empty switch in `$paramod\serv_csr\RESET_STRATEGY=1296649801.$proc$src/serv_1.2.1/rtl/serv_csr.v:76$251'.
 Found and cleaned up 1 empty switch in `$paramod\serv_rf_ram_if\width=2\reset_strategy=1296649801\csr_regs=4.$proc$src/serv_1.2.1/rtl/serv_rf_ram_if.v:125$224'.
+<<<<<<< HEAD
 Found and cleaned up 1 empty switch in `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:38$171'.
 Removing empty process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:38$171'.
+=======
+Found and cleaned up 1 empty switch in `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:38$171'.
+Removing empty process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:38$171'.
+>>>>>>> master
 Cleaned up 7 empty switches.
 
 31.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Marked 1 switch rules as full_case in process $proc$src/servant_1.2.1/servant/servant_timer.v:26$174 in module $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.
+<<<<<<< HEAD
 Marked 1 switch rules as full_case in process $proc$src/servant_1.2.1/servant/servant_ram.v:24$148 in module $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.
+=======
+Marked 1 switch rules as full_case in process $proc$src/servant_1.2.1/servant/servant_ram.v:24$148 in module $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.
+>>>>>>> master
 Removed 1 dead cases from process $proc$src/servant_1.2.1/servant/uart_rx.v:40$123 in module uart_rx.
 Marked 8 switch rules as full_case in process $proc$src/servant_1.2.1/servant/uart_rx.v:40$123 in module uart_rx.
 Removed 1 dead cases from process $proc$src/servant_1.2.1/servant/uart_tx.v:26$105 in module uart_tx.
@@ -879,7 +929,11 @@ Creating decoders for process `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=12
      3/3: $0\mtimecmp[31:0]
 Creating decoders for process `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.$proc$src/servant_1.2.1/servant/servant_timer.v:21$173'.
      1/1: $0\o_wb_dat[31:0]
+<<<<<<< HEAD
 Creating decoders for process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+=======
+Creating decoders for process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+>>>>>>> master
      1/13: $0\o_wb_rdt[31:0]
      2/13: $0$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:31$142_EN[31:0]$156
      3/13: $0$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:31$142_DATA[31:0]$159
@@ -893,7 +947,11 @@ Creating decoders for process `$paramod$03f76faa00c4040fae31824d747795b0c9826820
     11/13: $0$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_EN[31:0]$164
     12/13: $0$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_DATA[31:0]$163
     13/13: $0$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_ADDR[10:0]$162
+<<<<<<< HEAD
 Creating decoders for process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+=======
+Creating decoders for process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+>>>>>>> master
      1/1: $0\o_wb_ack[0:0]
 Creating decoders for process `\uart_rx.$proc$src/servant_1.2.1/servant/uart_rx.v:30$141'.
      1/1: $1\state[1:0]
@@ -1128,6 +1186,7 @@ Creating register for signal `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=129
   created $dff cell `$procdff$1203' with positive edge clock.
 Creating register for signal `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.\mtimecmp' using process `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.$proc$src/servant_1.2.1/servant/servant_timer.v:26$174'.
   created $dff cell `$procdff$1204' with positive edge clock.
+<<<<<<< HEAD
 Creating register for signal `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.\o_wb_rdt' using process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
   created $dff cell `$procdff$1205' with positive edge clock.
 Creating register for signal `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:32$143_DATA' using process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
@@ -1155,6 +1214,35 @@ Creating register for signal `$paramod$03f76faa00c4040fae31824d747795b0c9826820\
 Creating register for signal `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_EN' using process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
   created $dff cell `$procdff$1217' with positive edge clock.
 Creating register for signal `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.\o_wb_ack' using process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+=======
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.\o_wb_rdt' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1205' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:32$143_DATA' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1206' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:32$143_ADDR' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1207' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:31$142_ADDR' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1208' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:31$142_EN' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1209' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:32$143_EN' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1210' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:33$144_ADDR' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1211' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:31$142_DATA' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1212' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:33$144_DATA' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1213' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:33$144_EN' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1214' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_ADDR' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1215' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_DATA' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1216' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$memwr$\mem$src/servant_1.2.1/servant/servant_ram.v:34$145_EN' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+  created $dff cell `$procdff$1217' with positive edge clock.
+Creating register for signal `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.\o_wb_ack' using process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+>>>>>>> master
   created $dff cell `$procdff$1218' with positive edge clock.
 Creating register for signal `\uart_rx.\data_index' using process `\uart_rx.$proc$src/servant_1.2.1/servant/uart_rx.v:40$123'.
   created $dff cell `$procdff$1219' with positive edge clock.
@@ -1232,10 +1320,17 @@ Removing empty process `servant_gpio.$proc$src/servant_1.2.1/servant/servant_gpi
 Found and cleaned up 3 empty switches in `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.$proc$src/servant_1.2.1/servant/servant_timer.v:26$174'.
 Removing empty process `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.$proc$src/servant_1.2.1/servant/servant_timer.v:26$174'.
 Removing empty process `$paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.$proc$src/servant_1.2.1/servant/servant_timer.v:21$173'.
+<<<<<<< HEAD
 Found and cleaned up 4 empty switches in `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
 Removing empty process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
 Found and cleaned up 1 empty switch in `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
 Removing empty process `$paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+=======
+Found and cleaned up 4 empty switches in `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+Removing empty process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:30$152'.
+Found and cleaned up 1 empty switch in `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+Removing empty process `$paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.$proc$src/servant_1.2.1/servant/servant_ram.v:24$148'.
+>>>>>>> master
 Removing empty process `uart_rx.$proc$src/servant_1.2.1/servant/uart_rx.v:30$141'.
 Removing empty process `uart_rx.$proc$src/servant_1.2.1/servant/uart_rx.v:29$140'.
 Removing empty process `uart_rx.$proc$src/servant_1.2.1/servant/uart_rx.v:28$139'.
@@ -1263,8 +1358,13 @@ Cleaned up 60 empty switches.
 
 31.5. Executing FLATTEN pass (flatten design).
 Using template $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\servant_clock_gen for cells of type $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\servant_clock_gen.
+<<<<<<< HEAD
 Using template $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram for cells of type $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.
 Using template $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant for cells of type $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant.
+=======
+Using template $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram for cells of type $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.
+Using template $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant for cells of type $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant.
+>>>>>>> master
 Using template uart_rx for cells of type uart_rx.
 Using template uart_tx for cells of type uart_tx.
 Using template $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\ice40_pll for cells of type $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\ice40_pll.
@@ -1308,8 +1408,13 @@ Deleting now unused module servant_gpio.
 Deleting now unused module $paramod$0f2b8312cc11a2c944705af7e400629663b7037c\serv_rf_top.
 Deleting now unused module $paramod\servant_timer\WIDTH=32\RESET_STRATEGY=1296649801.
 Deleting now unused module $paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\servant_clock_gen.
+<<<<<<< HEAD
 Deleting now unused module $paramod$aba6da6e3f05a32dbb3a7fba378d971f6ce232d5\servant.
 Deleting now unused module $paramod$03f76faa00c4040fae31824d747795b0c9826820\servant_ram.
+=======
+Deleting now unused module $paramod$c5785aca136200f0b267002c03e454e095a89f25\servant.
+Deleting now unused module $paramod$a71722fe484450e337c73af1ce92da7dd0ec6e5a\servant_ram.
+>>>>>>> master
 Deleting now unused module uart_rx.
 Deleting now unused module uart_tx.
 
@@ -3422,7 +3527,14 @@ found and reported 0 problems.
 32. Executing JSON backend.
 
 Warnings: 5 unique messages, 14 total
+<<<<<<< HEAD
 End of script. Logfile hash: 3db15553ce
 CPU: user 4.77s system 0.03s, MEM: 83.00 MB total, 65.01 MB resident
 Yosys 0.9 (git sha1 1979e0b)
 Time spent: 28% 39x opt_clean (1 sec), 20% 39x opt_expr (1 sec), ...
+=======
+End of script. Logfile hash: a3f6f7cb11
+CPU: user 3.29s system 0.03s, MEM: 82.98 MB total, 64.97 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 27% 39x opt_clean (0 sec), 20% 39x opt_expr (0 sec), ...
+>>>>>>> master

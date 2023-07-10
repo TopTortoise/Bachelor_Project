@@ -63,6 +63,7 @@ Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 3049, spread = 693
 Info:     at iteration #2, type SB_GB: wirelen solved = 7555, spread = 7578, legal = 7587; time = 0.00s
 Info:     at iteration #2, type ICESTORM_RAM: wirelen solved = 6656, spread = 7895, legal = 8638; time = 0.00s
 Info:     at iteration #2, type ALL: wirelen solved = 246, spread = 7164, legal = 8225; time = 0.09s
+<<<<<<< HEAD
 Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 3014, spread = 7229, legal = 8054; time = 0.02s
 Info:     at iteration #3, type SB_GB: wirelen solved = 8012, spread = 8051, legal = 8056; time = 0.00s
 Info:     at iteration #3, type ICESTORM_RAM: wirelen solved = 7158, spread = 8236, legal = 8392; time = 0.00s
@@ -74,10 +75,24 @@ Info:     at iteration #4, type ALL: wirelen solved = 427, spread = 6764, legal 
 Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 3427, spread = 7065, legal = 7550; time = 0.02s
 Info:     at iteration #5, type SB_GB: wirelen solved = 7515, spread = 7544, legal = 7577; time = 0.00s
 Info:     at iteration #5, type ICESTORM_RAM: wirelen solved = 6712, spread = 7282, legal = 7823; time = 0.00s
+=======
+Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 3014, spread = 7229, legal = 8054; time = 0.03s
+Info:     at iteration #3, type SB_GB: wirelen solved = 8012, spread = 8051, legal = 8056; time = 0.00s
+Info:     at iteration #3, type ICESTORM_RAM: wirelen solved = 7158, spread = 8236, legal = 8392; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 369, spread = 6781, legal = 7608; time = 0.05s
+Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 3152, spread = 6616, legal = 7179; time = 0.03s
+Info:     at iteration #4, type SB_GB: wirelen solved = 7134, spread = 7170, legal = 7204; time = 0.01s
+Info:     at iteration #4, type ICESTORM_RAM: wirelen solved = 6360, spread = 7371, legal = 7787; time = 0.01s
+Info:     at iteration #4, type ALL: wirelen solved = 427, spread = 6764, legal = 8583; time = 0.06s
+Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 3427, spread = 7065, legal = 7550; time = 0.04s
+Info:     at iteration #5, type SB_GB: wirelen solved = 7515, spread = 7544, legal = 7577; time = 0.01s
+Info:     at iteration #5, type ICESTORM_RAM: wirelen solved = 6712, spread = 7282, legal = 7823; time = 0.01s
+>>>>>>> master
 Info:     at iteration #5, type ALL: wirelen solved = 511, spread = 6766, legal = 8027; time = 0.05s
 Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 3366, spread = 6267, legal = 6778; time = 0.02s
 Info:     at iteration #6, type SB_GB: wirelen solved = 6732, spread = 6765, legal = 6798; time = 0.00s
 Info:     at iteration #6, type ICESTORM_RAM: wirelen solved = 6153, spread = 7207, legal = 7621; time = 0.00s
+<<<<<<< HEAD
 Info:     at iteration #6, type ALL: wirelen solved = 705, spread = 6705, legal = 8265; time = 0.11s
 Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 3483, spread = 6356, legal = 7184; time = 0.03s
 Info:     at iteration #7, type SB_GB: wirelen solved = 7146, spread = 7181, legal = 7196; time = 0.00s
@@ -91,6 +106,21 @@ Info: HeAP Placer Time: 0.80s
 Info:   of which solving equations: 0.42s
 Info:   of which spreading cells: 0.02s
 Info:   of which strict legalisation: 0.34s
+=======
+Info:     at iteration #6, type ALL: wirelen solved = 705, spread = 6705, legal = 8265; time = 0.15s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 3483, spread = 6356, legal = 7184; time = 0.02s
+Info:     at iteration #7, type SB_GB: wirelen solved = 7146, spread = 7181, legal = 7196; time = 0.00s
+Info:     at iteration #7, type ICESTORM_RAM: wirelen solved = 6729, spread = 7211, legal = 7578; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 800, spread = 6604, legal = 7959; time = 0.03s
+Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 3381, spread = 5836, legal = 6497; time = 0.04s
+Info:     at iteration #8, type SB_GB: wirelen solved = 6461, spread = 6496, legal = 6496; time = 0.00s
+Info:     at iteration #8, type ICESTORM_RAM: wirelen solved = 6067, spread = 6776, legal = 7026; time = 0.00s
+Info:     at iteration #8, type ALL: wirelen solved = 905, spread = 6154, legal = 8133; time = 0.03s
+Info: HeAP Placer Time: 0.92s
+Info:   of which solving equations: 0.50s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.35s
+>>>>>>> master
 
 Info: Running simulated annealing placer for refinement.
 Info:   at iteration #1: temp = 0.000000, timing cost = 509, wirelen = 7608
@@ -100,7 +130,11 @@ Info:   at iteration #15: temp = 0.000000, timing cost = 238, wirelen = 5633
 Info:   at iteration #20: temp = 0.000000, timing cost = 227, wirelen = 5515
 Info:   at iteration #25: temp = 0.000000, timing cost = 232, wirelen = 5464
 Info:   at iteration #26: temp = 0.000000, timing cost = 230, wirelen = 5464 
+<<<<<<< HEAD
 Info: SA placement time 0.57s
+=======
+Info: SA placement time 0.56s
+>>>>>>> master
 
 Info: Max frequency for clock         'wb_clk_$glb_clk': 78.49 MHz (PASS at 32.00 MHz)
 Info: Max frequency for clock 'i_clk$SB_IO_IN_$glb_clk': 125.09 MHz (PASS at 32.00 MHz)
@@ -142,6 +176,7 @@ Info: Routing 4100 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
 Info:       1000 |       29        840 |   29   840 |      3130|       0.04       0.04|
+<<<<<<< HEAD
 Info:       2000 |      146       1723 |  117   883 |      2269|       0.07       0.11|
 Info:       3000 |      336       2533 |  190   810 |      1537|       0.12       0.23|
 Info:       4000 |      631       3238 |  295   705 |      1003|       0.13       0.36|
@@ -150,6 +185,16 @@ Info:       6000 |     1282       4587 |  289   711 |        75|       0.13     
 Info:       6428 |     1489       4809 |  207   222 |         0|       0.09       0.76|
 Info: Routing complete.
 Info: Router1 time 0.76s
+=======
+Info:       2000 |      146       1723 |  117   883 |      2269|       0.06       0.11|
+Info:       3000 |      336       2533 |  190   810 |      1537|       0.12       0.23|
+Info:       4000 |      631       3238 |  295   705 |      1003|       0.13       0.36|
+Info:       5000 |      993       3876 |  362   638 |       561|       0.17       0.53|
+Info:       6000 |     1282       4587 |  289   711 |        75|       0.13       0.66|
+Info:       6428 |     1489       4809 |  207   222 |         0|       0.09       0.75|
+Info: Routing complete.
+Info: Router1 time 0.75s
+>>>>>>> master
 Info: Checksum: 0xef7e9250
 
 Info: Critical path report for clock 'wb_clk_$glb_clk' (posedge -> posedge):

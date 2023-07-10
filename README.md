@@ -5,3 +5,7 @@
 
 ### to load the code onto the Icestick run:
 ```iceprog build/servant_1.2.1/icestick-icestorm/servant_1.2.1.bin```
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
