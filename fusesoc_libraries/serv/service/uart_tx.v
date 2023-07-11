@@ -2,11 +2,12 @@ module uart_tx
 #(  parameter clks_per_bit = 104,
     parameter BITS = 8)
 (
-    input  clk,
-    input tx_active,
-    input wire [BITS-1:0] tx_data,
-    output tx_done,
-    output reg o_data = 8'hff
+    input wire i_wb_clk,
+    input wire i_wb_rst,// not sure if reset is needed
+    input wire tx_active,
+    input wire [BITS-1:0] i_wb_dat,
+    output wire tx_done,
+    output wire o_wb_rdt = 8'hff
 );
 
 localparam  IDLE = 0;
@@ -23,15 +24,15 @@ reg[1:0] state = IDLE;
 reg[6:0] clock_count = 0;// >= clks_per_bit
 reg [2:0] data_index = 0;
 
-always @(posedge clk) begin
+always @(posedge i_wb_clk) begin
     case (state)
         IDLE:
         begin
-            o_data      <= 1'b1; // send 1's whend IDLE
+            o_wb_rdt      <= 1'b1; // send 1's whend IDLE
             temp_done   <= 1'b0;
             clock_count <= 0;
             data_index  <=  0;
-            temp_data <= tx_data;
+            temp_data <= i_wb_dat;
 
             if(tx_active == 1'b1 )
                 begin
@@ -45,11 +46,11 @@ always @(posedge clk) begin
 
         START:
         begin
-            o_data <= 1'b0;
+            o_wb_rdt <= 1'b0;
 
             if (clock_count < clks_per_bit - 1) 
                 begin
-                    temp_data <= tx_data;
+                    temp_data <= i_wb_dat;
                     clock_count <= clock_count + 1;
                     state <= START;
                 end
@@ -62,7 +63,7 @@ always @(posedge clk) begin
 
         TRANSMIT:
         begin
-            o_data <= temp_data[data_index];// send bits for the byte
+            o_wb_rdt <= temp_data[data_index];// send bits for the byte
             if (clock_count < clks_per_bit - 1) 
                 begin
                     clock_count <= clock_count + 1;
@@ -87,7 +88,7 @@ always @(posedge clk) begin
         STOP:
         
         begin
-            o_data <= 1'b1;
+            o_wb_rdt <= 1'b1;
            // tx_active <=0;
             if (clock_count < clks_per_bit - 1) begin
                 clock_count <= clock_count + 1;

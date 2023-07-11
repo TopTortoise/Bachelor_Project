@@ -7,8 +7,8 @@ module service
  
  //uart
  output wire to_pc,
- input i_data,
- output o_data
+ input wire i_data,
+ output wire o_data
  );
 
    parameter memfile = "simple_BLE.hex";
@@ -85,7 +85,8 @@ module service
       .i_wb_sel (sel),
       .i_wb_dat (dat),
       .o_wb_rdt (wb_mem_rdt),
-      .o_wb_ack (wb_mem_ack)
+      .o_wb_ack (wb_mem_ack),
+      .o_uart(o_data)
     );
 
   //uart_rx
@@ -102,17 +103,17 @@ module service
   );
 
   //uart_tx
-  wire tx_active;
-  wire [BITS-1:0]data_to_ble;
-  wire tx_done;
-
-  uart_tx tx_to_ble (
-    .clk(i_clk),
-    .tx_data(data_to_ble),
-    .tx_done(tx_done),
-    .tx_active(tx_active),
-    .o_data(o_data)
-  );
+  //wire tx_active;
+  //wire [BITS-1:0]data_to_ble;
+  //wire tx_done;
+//
+  //uart_tx tx_to_ble (
+  //  .clk(i_clk),
+  //  .tx_data(data_to_ble),
+  //  .tx_done(tx_done),
+  //  .tx_active(tx_active),
+  //  .o_data(o_data)
+  //);
 
   //only for testing
   //wire pc_active;
@@ -165,15 +166,15 @@ module service
 
     
     //so it doesnt send it forever
-    if (tx_active) begin
-      tx_active <= 0;
-    end
-
-    //tx
-    if((adr == 'h00F00000))begin //send data to ble_tx_active
-        data_to_ble <= wb_mem_rdt[7:0];
-        tx_active <= 1;
-    end
+   // if (tx_active) begin
+   //   tx_active <= 0;
+   // end
+//
+   // //tx
+   // if((adr == 'h00F00000))begin //send data to ble_tx_active
+   //     data_to_ble <= wb_mem_rdt[7:0];
+   //     tx_active <= 1;
+   // end
 
    //keep address in range
     if(my_adr>adr_UL)my_adr <= adr_LL;
