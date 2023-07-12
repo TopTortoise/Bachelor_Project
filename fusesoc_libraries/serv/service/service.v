@@ -95,11 +95,11 @@ module service
   wire [BITS-1:0] from_ble;
 
   uart_rx rx_from_ble (
-    .clk(i_clk),
-    .rx_data(i_data),
+    .i_wb_clk(i_clk),
+    .i_wb_dat(i_data),
     .rx_done(rx_done),
     .rx_active(rx_active),
-    .data(from_ble)
+    .o_wb_rdt(from_ble)
   );
 
   //uart_tx
