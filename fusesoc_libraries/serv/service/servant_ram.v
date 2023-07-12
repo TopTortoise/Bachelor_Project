@@ -54,7 +54,7 @@ module servant_ram
       .i_wb_rst(i_wb_rst),
       .rx_done(rx_done),
       .rx_active(rx_active),
-      .o_wb_rdt(mem[uart_addr][7:0])
+      .o_wb_rdt(from_ble)
     );
 
 
@@ -70,7 +70,9 @@ module servant_ram
     end 
 
     always @(posedge i_wb_clk) begin
+      //save data and increase address
       if(tx_done) begin
+        mem[uart_addr][7:0] <= {{24{0}},from_ble}
         uart_addr <= uart_addr + 1;
       end
       //stops sending data forever

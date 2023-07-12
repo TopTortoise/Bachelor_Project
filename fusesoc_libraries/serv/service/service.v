@@ -90,17 +90,17 @@ module service
     );
 
   //uart_rx
-  wire rx_done;
-  wire rx_active;
-  wire [BITS-1:0] from_ble;
-
-  uart_rx rx_from_ble (
-    .i_wb_clk(i_clk),
-    .i_wb_dat(i_data),
-    .rx_done(rx_done),
-    .rx_active(rx_active),
-    .o_wb_rdt(from_ble)
-  );
+  //wire rx_done;
+  //wire rx_active;
+  //wire [BITS-1:0] from_ble;
+//
+  //uart_rx rx_from_ble (
+  //  .i_wb_clk(i_clk),
+  //  .i_wb_dat(i_data),
+  //  .rx_done(rx_done),
+  //  .rx_active(rx_active),
+  //  .o_wb_rdt(from_ble)
+  //);
 
   //uart_tx
   //wire tx_active;
