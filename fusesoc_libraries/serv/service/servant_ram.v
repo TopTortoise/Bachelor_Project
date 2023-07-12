@@ -4,7 +4,7 @@ module servant_ram
     parameter depth = 256,
     parameter aw    = $clog2(depth),
     parameter RESET_STRATEGY = "",
-    parameter UART_addr = 'h00F00000;
+    parameter UART_addr = 'h00F00000,
     parameter memfile = "")
    (input wire 		i_wb_clk,
     input wire 		i_wb_rst,
