@@ -2,9 +2,11 @@
 module servant_ram
   #(//Memory parameters wb = wishbone
     parameter depth = 256,
-    parameter aw    = $clog2(depth),
+    parameter aw    = $clog2(depth),arameter depth 
     parameter RESET_STRATEGY = "",
     parameter UART_addr = 'h00F00000,
+    parameter adr_LL = 'h00C00000,//lower limit
+    parameter adr_UL = 'hC00F0000,//upper limit
     parameter memfile = "")
    (input wire 		i_wb_clk,
     input wire 		i_wb_rst,
@@ -13,6 +15,7 @@ module servant_ram
     input wire [3:0] 	i_wb_sel,
     input wire 		i_wb_we,
     input wire 		i_wb_cyc,
+    input wire i_uart_dat,
     output reg [31:0] 	o_wb_rdt,
     output reg 		o_wb_ack,
     output wire o_uart);
@@ -22,20 +25,38 @@ module servant_ram
     reg [31:0] 		mem [0:depth/4-1] /* verilator public */;
 
     wire [aw-3:0] 	addr = i_wb_adr[aw-1:2];
+
+    wire [aw-3:0]  uart_addr = adr_LL
     //UART_TX
     //signals
     wire tx_active;
     wire data_to_ble;//probably dont need that
     wire tx_done;
     //module
-      uart_tx tx(
-        .i_wb_clk(i_wb_clk),
-        .i_wb_rst(i_wb_rst),
-        .tx_active(tx_active),
-        .i_wb_dat(i_wb_dat[7:0]),
-        .tx_done(tx_done),
-        .o_wb_rdt(o_uart)
-      );
+    uart_tx tx(
+      .i_wb_clk(i_wb_clk),
+      .i_wb_rst(i_wb_rst),
+      .tx_active(tx_active),
+      .i_wb_dat(i_wb_dat[7:0]),
+      .tx_done(tx_done),
+      .o_wb_rdt(o_uart)
+    );
+
+    //UART_RX
+    //signals
+    wire rx_done;
+    wire rx_active;
+    wire [BITS-1:0] from_ble;
+    //module
+    uart_rx rx_from_ble (
+      .i_wb_clk(i_wb_clk),
+      .i_wb_dat(i_uart_dat),
+      .i_wb_rst(i_wb_rst),
+      .rx_done(rx_done),
+      .rx_active(rx_active),
+      .o_wb_rdt(mem[uart_addr][7:0])
+    );
+
 
 
 
@@ -49,6 +70,9 @@ module servant_ram
     end 
 
     always @(posedge i_wb_clk) begin
+      if(tx_done) begin
+        uart_addr <= uart_addr + 1;
+      end
       //stops sending data forever
       if (tx_active) begin
         tx_active <= 0;
