@@ -2,12 +2,11 @@ module uart_tx
 #(  parameter clks_per_bit = 104,
     parameter BITS = 8)
 (
-    input wire i_wb_clk,
-    input wire i_wb_rst,// not sure if reset is needed
-    input wire tx_active,
+    input  i_wb_clk,
+    input tx_active,
     input wire [BITS-1:0] i_wb_dat,
-    output wire tx_done,
-    output wire o_wb_rdt = 8'hff
+    output tx_done,
+    output reg o_wb_rdt = 8'hff
 );
 
 localparam  IDLE = 0;

@@ -84,36 +84,37 @@ module service
       .i_wb_we  (we) ,
       .i_wb_sel (sel),
       .i_wb_dat (dat),
+      //.i_uart_dat(i_data),
       .o_wb_rdt (wb_mem_rdt),
       .o_wb_ack (wb_mem_ack),
-      .o_uart(o_data)
+     // .o_uart(o_data)
     );
 
   //uart_rx
-  //wire rx_done;
-  //wire rx_active;
-  //wire [BITS-1:0] from_ble;
-//
-  //uart_rx rx_from_ble (
-  //  .i_wb_clk(i_clk),
-  //  .i_wb_dat(i_data),
-  //  .rx_done(rx_done),
-  //  .rx_active(rx_active),
-  //  .o_wb_rdt(from_ble)
-  //);
+  wire rx_done;
+  wire rx_active;
+  wire [BITS-1:0] from_ble;
+
+  uart_rx rx_from_ble (
+    .i_wb_clk(i_clk),
+    .i_wb_dat(i_data),
+    .rx_done(rx_done),
+    .rx_active(rx_active),
+    .o_wb_rdt(from_ble)
+  );
 
   //uart_tx
-  //wire tx_active;
-  //wire [BITS-1:0]data_to_ble;
-  //wire tx_done;
-//
-  //uart_tx tx_to_ble (
-  //  .clk(i_clk),
-  //  .tx_data(data_to_ble),
-  //  .tx_done(tx_done),
-  //  .tx_active(tx_active),
-  //  .o_data(o_data)
-  //);
+  wire tx_active;
+  wire [BITS-1:0]data_to_ble;
+  wire tx_done;
+
+  uart_tx tx_to_ble (
+    .i_wb_clk(i_clk),
+    .i_wb_dat(data_to_ble),
+    .tx_done(tx_done),
+    .tx_active(tx_active),
+    .o_wb_rdt(o_data)
+  );
 
   //only for testing
   //wire pc_active;
@@ -166,15 +167,15 @@ module service
 
     
     //so it doesnt send it forever
-   // if (tx_active) begin
-   //   tx_active <= 0;
-   // end
-//
-   // //tx
-   // if((adr == 'h00F00000))begin //send data to ble_tx_active
-   //     data_to_ble <= wb_mem_rdt[7:0];
-   //     tx_active <= 1;
-   // end
+    if (tx_active) begin
+      tx_active <= 0;
+    end
+
+    //tx
+    if((adr == 'h00F00000))begin //send data to ble_tx_active
+        data_to_ble <= wb_mem_rdt[7:0];
+        tx_active <= 1;
+    end
 
    //keep address in range
     if(my_adr>adr_UL)my_adr <= adr_LL;
