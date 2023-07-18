@@ -7,8 +7,8 @@ module service
  
  //uart
  output wire to_pc,
- input i_data,
- output o_data
+ input wire i_data,
+ output wire o_data
  );
 
    parameter memfile = "simple_BLE.hex";
@@ -84,8 +84,10 @@ module service
       .i_wb_we  (we) ,
       .i_wb_sel (sel),
       .i_wb_dat (dat),
+      //.i_uart_dat(i_data),
       .o_wb_rdt (wb_mem_rdt),
-      .o_wb_ack (wb_mem_ack)
+      .o_wb_ack (wb_mem_ack),
+     // .o_uart(o_data)
     );
 
   //uart_rx
@@ -94,11 +96,11 @@ module service
   wire [BITS-1:0] from_ble;
 
   uart_rx rx_from_ble (
-    .clk(i_clk),
-    .rx_data(i_data),
+    .i_wb_clk(i_clk),
+    .i_wb_dat(i_data),
     .rx_done(rx_done),
     .rx_active(rx_active),
-    .data(from_ble)
+    .o_wb_rdt(from_ble)
   );
 
   //uart_tx
@@ -107,11 +109,11 @@ module service
   wire tx_done;
 
   uart_tx tx_to_ble (
-    .clk(i_clk),
-    .tx_data(data_to_ble),
+    .i_wb_clk(i_clk),
+    .i_wb_dat(data_to_ble),
     .tx_done(tx_done),
     .tx_active(tx_active),
-    .o_data(o_data)
+    .o_wb_rdt(o_data)
   );
 
   //only for testing

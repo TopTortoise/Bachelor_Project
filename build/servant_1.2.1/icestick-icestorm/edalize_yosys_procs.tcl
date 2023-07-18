@@ -18,17 +18,17 @@ read_verilog {src/serv_1.2.1/rtl/serv_top.v}
 read_verilog {src/serv_1.2.1/rtl/serv_rf_top.v}
 read_verilog {src/serv_1.2.1/rtl/serv_aligner.v}
 read_verilog {src/serv_1.2.1/rtl/serv_compdec.v}
-read_verilog {src/servant_1.2.1/servant/servant_clock_gen.v}
-read_verilog {src/servant_1.2.1/servant/servant_timer.v}
-read_verilog {src/servant_1.2.1/servant/servant_gpio.v}
-read_verilog {src/servant_1.2.1/servant/servant_arbiter.v}
-read_verilog {src/servant_1.2.1/servant/servant_mux.v}
-read_verilog {src/servant_1.2.1/servant/uart_tx.v}
-read_verilog {src/servant_1.2.1/servant/uart_rx.v}
-read_verilog {src/servant_1.2.1/servant/servant_ram.v}
-read_verilog {src/servant_1.2.1/servant/servant.v}
-read_verilog {src/servant_1.2.1/servant/ice40_pll.v}
-read_verilog {src/servant_1.2.1/servant/service.v}
+read_verilog {src/servant_1.2.1/service/servant_clock_gen.v}
+read_verilog {src/servant_1.2.1/service/servant_timer.v}
+read_verilog {src/servant_1.2.1/service/servant_gpio.v}
+read_verilog {src/servant_1.2.1/service/servant_arbiter.v}
+read_verilog {src/servant_1.2.1/service/servant_mux.v}
+read_verilog {src/servant_1.2.1/service/uart_tx.v}
+read_verilog {src/servant_1.2.1/service/uart_rx.v}
+read_verilog {src/servant_1.2.1/service/servant_ram.v}
+read_verilog {src/servant_1.2.1/service/servant.v}
+read_verilog {src/servant_1.2.1/service/ice40_pll.v}
+read_verilog {src/servant_1.2.1/service/service.v}
 }
 
 proc set_defines {} {

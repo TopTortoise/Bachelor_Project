@@ -65,37 +65,37 @@ files:
   name: zephyr_hello.hex
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_clock_gen.v
+  name: src/servant_1.2.1/service/servant_clock_gen.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_timer.v
+  name: src/servant_1.2.1/service/servant_timer.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_gpio.v
+  name: src/servant_1.2.1/service/servant_gpio.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_arbiter.v
+  name: src/servant_1.2.1/service/servant_arbiter.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_mux.v
+  name: src/servant_1.2.1/service/servant_mux.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/uart_tx.v
+  name: src/servant_1.2.1/service/uart_tx.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/uart_rx.v
+  name: src/servant_1.2.1/service/uart_rx.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_ram.v
+  name: src/servant_1.2.1/service/servant_ram.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant.v
+  name: src/servant_1.2.1/service/servant.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/ice40_pll.v
+  name: src/servant_1.2.1/service/ice40_pll.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/service.v
+  name: src/servant_1.2.1/service/service.v
 - core: ::servant:1.2.1
   file_type: PCF
   name: src/servant_1.2.1/data/icestick.pcf

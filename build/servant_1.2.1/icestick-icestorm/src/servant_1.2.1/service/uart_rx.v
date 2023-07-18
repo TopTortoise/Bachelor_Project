@@ -2,11 +2,12 @@ module uart_rx
 #( parameter clks_per_bit = 104,
     parameter BITS = 8 )
 (
-    input wire clk,
-    input wire  rx_data,
+    input wire  i_wb_clk,
+    input wire  i_wb_rst,// not sure if reset is needed
+    input wire  i_wb_dat,
     output wire rx_done,
     output wire rx_active,
-    output  [BITS-1:0]data
+    output wire [BITS-1:0]o_wb_rdt
 );
 
 //states
@@ -31,13 +32,13 @@ reg [1:0] state = IDLE;
 
 
 //for metastabillity 
-always @(posedge clk) begin
-    r_Rx_temp <= rx_data;
+always @(posedge i_wb_clk) begin
+    r_Rx_temp <= i_wb_dat;
     rx_bit <= r_Rx_temp; 
 end
 
 //RX statemachine
-always @(posedge clk) begin
+always @(posedge i_wb_clk) begin
     case (state)
         IDLE: 
         begin
@@ -125,6 +126,6 @@ always @(posedge clk) begin
     endcase
 end
 assign rx_active = temp_active;
-assign data = rx_byte;
+assign o_wb_rdt = rx_byte;
 assign rx_done = temp_done;
 endmodule
