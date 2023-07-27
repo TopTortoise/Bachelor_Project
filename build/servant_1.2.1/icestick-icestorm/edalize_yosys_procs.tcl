@@ -44,7 +44,7 @@ proc set_incdirs {} {
 verilog_defaults -add -Isrc/servant-icestick_pll_1.2.1}
 
 proc set_params {} {
-chparam -set memfile {"/home/paul/serv/fusesoc_libraries/serv/sw/simple_BLE.hex"} service
+chparam -set memfile {"/home/paul/Bachelor_Project/fusesoc_libraries/serv/sw/simple_BLE.hex"} service
 chparam -set memsize 7168 service
 chparam -set PLL {"ICE40_CORE"} service}
 

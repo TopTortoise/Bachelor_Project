@@ -62,7 +62,7 @@ files:
   name: simple_BLE.hex
 - core: ::servant:1.2.1
   file_type: user
-  name: zephyr_hello.hex
+  name: test.hex
 - core: ::servant:1.2.1
   file_type: verilogSource
   name: src/servant_1.2.1/service/servant_clock_gen.v
@@ -120,7 +120,7 @@ parameters:
     paramtype: vlogdefine
   memfile:
     datatype: file
-    default: /home/paul/serv/fusesoc_libraries/serv/sw/simple_BLE.hex
+    default: /home/paul/Bachelor_Project/fusesoc_libraries/serv/sw/simple_BLE.hex
     description: Preload RAM with a hex file at compile-time
     paramtype: vlogparam
   memsize:

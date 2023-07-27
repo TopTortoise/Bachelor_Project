@@ -8,7 +8,7 @@ filesets:
     files:
       - sw/blinky.hex       : {copyto : blinky.hex}
       - sw/simple_BLE.hex       : {copyto : simple_BLE.hex}
-      - sw/zephyr_hello.hex : {copyto : zephyr_hello.hex}
+      - sw/test.hex : {copyto : test.hex}
     file_type : user
 
   servant_tb:
