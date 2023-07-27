@@ -18,19 +18,19 @@ module servant_ram
     //output wire o_uart,
     output reg 		o_wb_ack);
 
-   wire [3:0] 		we = ({4{i_wb_we & i_wb_cyc}} & i_wb_sel);//&(!recieve) | 4'b1111&(recieve);
+   wire [3:0] 		we = ({4{i_wb_we & i_wb_cyc}} & i_wb_sel);
 
    reg [31:0] 		mem [0:depth/4-1] /* verilator public */;
 
-   wire [aw-3:0] 	addr = i_wb_adr[aw-1:2];//&(!recieve) | my_adr[aw-1:2]&recieve ;
+   wire [aw-3:0] 	addr = i_wb_adr[aw-1:2];
 
-   wire[31:0] data = i_wb_dat;//&(!recieve) | {{24{1'b0}},from_ble&(!recieve)};
+   wire[31:0] data = i_wb_dat;
     //uart_rx
     wire rx_done;
     wire rx_active;
     wire [8-1:0] from_ble;
                       //'hFFFFFFFF
-    reg [31:0] my_adr = 'h00B00000;
+    reg [31:0] my_adr = 'h000000BB;
 
 
     uart_rx rx_from_ble (//uart_rx in here make it work
@@ -53,11 +53,21 @@ module servant_ram
    end
 
    always @(posedge i_wb_clk) begin
+    if(!rx_done) begin
       if (we[0]) mem[addr][7:0]   <= data[7:0];
       if (we[1]) mem[addr][15:8]  <= data[15:8];
       if (we[2]) mem[addr][23:16] <= data[23:16];
       if (we[3]) mem[addr][31:24] <= data[31:24];
-      if (recieve) my_adr <= my_adr+2;
+    end
+    else begin
+      if (we[0]) mem[my_adr[aw-1:2]][7:0]   <= from_ble;
+      if (we[1]) mem[my_adr[aw-1:2]][15:8]  <= 0;
+      if (we[2]) mem[my_adr[aw-1:2]][23:16] <= 0;
+      if (we[3]) mem[my_adr[aw-1:2]][31:24] <= 0;
+      my_adr <= my_adr+2;
+    end
+
+      //if (recieve) my_adr <= my_adr+2;
       o_wb_rdt <= mem[addr];
    end
 
