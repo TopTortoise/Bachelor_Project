@@ -15,7 +15,7 @@ module service
    parameter memsize = 8192;
    parameter PLL = "NONE";
    parameter BITS = 8;
-   parameter adr_LL = 'h00000C00;//lower limit
+   parameter adr_LL = 'h00C00000;//lower limit
    parameter adr_UL = 'h00C10000;//upper limit
    //ram
    wire [31:0]  wb_mem_adr;
@@ -45,11 +45,9 @@ module service
      #(.memfile (memfile),
        .memsize (memsize))
    servant
-     (.wb_clk (wb_clk),
+     (.wb_clk (i_clk),
       .wb_rst (wb_rst),
       .i_wb_mem_ack (wb_mem_ack),
-      .wb_clk (wb_clk),
-      .wb_rst (wb_rst),
       .i_wb_mem_adr (wb_mem_adr),
       .i_wb_mem_cyc (wb_mem_cyc),
       .i_wb_mem_we (wb_mem_we),
@@ -76,7 +74,7 @@ module service
   servant_ram
   #(.memfile(memfile), .depth (memsize), .RESET_STRATEGY("MINI"))
     ram
-    ( .i_wb_clk (wb_clk),
+    ( .i_wb_clk (i_clk),
       .i_wb_rst (wb_rst),
       .i_wb_adr (adr[$clog2(memsize)-1:2]),
       .i_wb_cyc (cyc),
@@ -91,17 +89,17 @@ module service
     );
 
   //uart_rx
-  //wire rx_done;
-  //wire rx_active;
-  //wire [BITS-1:0] from_ble;
-//
-  //uart_rx rx_from_ble (
-  //  .i_wb_clk(i_clk),
-  //  .i_wb_dat(i_data),
-  //  .rx_done(rx_done),
-  //  .rx_active(rx_active),
-  //  .o_wb_rdt(from_ble)
-  //);
+  wire rx_done;
+  wire rx_active;
+  wire [BITS-1:0] from_ble;
+
+  uart_rx rx_from_ble (
+    .i_wb_clk(i_clk),
+    .i_wb_dat(i_data),
+    .rx_done(rx_done),
+    .rx_active(rx_active),
+    .o_wb_rdt(from_ble)
+  );
 
   //uart_tx
   wire tx_active;
@@ -116,7 +114,7 @@ module service
     .o_wb_rdt(o_data)
   );
 
-  //only for testing
+  //pc uart
   wire pc_active;
   wire [BITS-1:0]pc_data;
   wire pc_done;
@@ -131,7 +129,7 @@ module service
     .o_wb_rdt(to_pc)
   );
 
-  //assign to_pc = i_data;
+  //assign to_pc = o_data;
 
   reg [31:0] my_adr = adr_LL;
 
@@ -150,15 +148,15 @@ module service
     if (pc_active) begin
       pc_active <= 0;
     end
-    // if(recieve)begin
+    //if(recieve)begin
     //    pc_active <= 1;
     //    data_to <= wb_mem_rdt[7:0];
     //end
-
+//
     //
-    //if(recieve) my_adr <= my_adr + 2;
+    if(recieve) my_adr <= my_adr + 2;
 
-    //recieve <= rx_done;
+    recieve <= rx_done;
 
     if(adr == 'h00A00000)begin
       data_to <= wb_mem_rdt[7:0];
@@ -180,17 +178,23 @@ module service
    //keep address in range
     if(my_adr>adr_UL)my_adr <= adr_LL;
 
+    adr <= wb_mem_adr&{32{!rx_done}} | my_adr&{32{rx_done&!wb_mem_cyc}};
+    cyc <= wb_mem_cyc&{!rx_done} | 1'b1&{rx_done&!wb_mem_cyc} ;
+    we  <= wb_mem_we&{!rx_done} | 1'b1&{rx_done&!wb_mem_cyc} ;
+    sel <= wb_mem_sel&{4{!rx_done}} | 4'b1111&{4{rx_done&!wb_mem_cyc}} ;
+    dat <= wb_mem_dat&{32{!rx_done}} | from_ble&{8{rx_done&!wb_mem_cyc}};
+
     
   end
     //if recieve save BLE data if not recieve save dat from serv
      //assign recieve = rx_done;
-     assign adr = wb_mem_adr;//&{32{!recieve}} | my_adr&{32{recieve&!wb_mem_cyc}};
-     assign cyc = wb_mem_cyc;//&{!recieve} | 1'b1&{recieve&!wb_mem_cyc} ;
-     assign we = wb_mem_we;//&{!recieve} | 1'b1&{recieve&!wb_mem_cyc} ;
-     assign sel = wb_mem_sel;//&{4{!recieve}} | 4'b1111&{4{recieve&!wb_mem_cyc}} ;
-     assign dat = wb_mem_dat;//&{32{!recieve}} | from_ble&{8{recieve&!wb_mem_cyc}};
+   // assign adr = wb_mem_adr&{32{!recieve}} | my_adr&{32{recieve}};
+   // assign cyc = wb_mem_cyc&{!recieve} | 1'b1&{recieve} ;
+   // assign we = wb_mem_we&{!recieve} | 1'b1&{recieve} ;
+   // assign sel = wb_mem_sel&{4{!recieve}} | 4'b1111&{4{recieve}} ;
+   // assign dat = wb_mem_dat&{32{!recieve}} | from_ble&{8{recieve}};
 
-     assign q1 = 4'b0001;
+     assign q1 = 4'b0101;
   
 
 endmodule

@@ -9,7 +9,7 @@ module servant
  output wire i_wb_mem_cyc,
  output wire i_wb_mem_we,
  output wire [3:0] i_wb_mem_sel,
- input wire [31:0]  i_wb_mem_dat,
+ output wire [31:0]  i_wb_mem_dat,
  input wire [31:0] i_wb_mem_rdt,
  //
  output wire q
@@ -244,8 +244,8 @@ module servant
 `endif
 
 
-    assign wb_clk = wb_clk;
-    assign wb_rst = wb_rst;
+    //assign wb_clk = wb_clk;
+    //assign wb_rst = wb_rst;
     assign i_wb_mem_adr = wb_mem_adr;
     assign i_wb_mem_cyc = wb_mem_cyc;
     assign i_wb_mem_we = wb_mem_we;

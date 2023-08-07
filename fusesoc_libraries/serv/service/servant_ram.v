@@ -26,25 +26,25 @@ module servant_ram
 
    wire[31:0] data = i_wb_dat;
     //uart_rx
-    wire rx_done;
-    wire rx_active;
-    wire [8-1:0] from_ble;
-                      //'hFFFFFFFF
-    reg [31:0] my_adr = 'h000000BB;
-
-
-    uart_rx rx_from_ble (//uart_rx in here make it work
-      .i_wb_clk(uart_clk),
-      .i_wb_dat(i_uart_dat),
-      .rx_done(rx_done),
-      .rx_active(rx_active),
-      .o_wb_rdt(from_ble)
-    );
-    reg recieve = 0;
-   always @(posedge i_wb_clk ) begin
-    recieve <= rx_done;
-   end
-
+    //wire rx_done;
+    //wire rx_active;
+    //wire [8-1:0] from_ble;
+    //                  //'hFFFFFFFF
+    //reg [31:0] my_adr = 'h000000BB;
+//
+//
+    //uart_rx rx_from_ble (//uart_rx in here make it work
+    //  .i_wb_clk(uart_clk),
+    //  .i_wb_dat(i_uart_dat),
+    //  .rx_done(rx_done),
+    //  .rx_active(rx_active),
+    //  .o_wb_rdt(from_ble)
+    //);
+    //reg recieve = 0;
+   //always @(posedge i_wb_clk ) begin
+   // recieve <= rx_done;
+   //end
+//
    always @(posedge i_wb_clk)begin
      if (i_wb_rst & (RESET_STRATEGY != "NONE"))
        o_wb_ack <= 1'b0;
@@ -53,21 +53,10 @@ module servant_ram
    end
 
    always @(posedge i_wb_clk) begin
-    if(!rx_done) begin
       if (we[0]) mem[addr][7:0]   <= data[7:0];
       if (we[1]) mem[addr][15:8]  <= data[15:8];
       if (we[2]) mem[addr][23:16] <= data[23:16];
       if (we[3]) mem[addr][31:24] <= data[31:24];
-    end
-    else begin
-      if (we[0]) mem[my_adr[aw-1:2]][7:0]   <= from_ble;
-      if (we[1]) mem[my_adr[aw-1:2]][15:8]  <= 0;
-      if (we[2]) mem[my_adr[aw-1:2]][23:16] <= 0;
-      if (we[3]) mem[my_adr[aw-1:2]][31:24] <= 0;
-      my_adr <= my_adr+2;
-    end
-
-      //if (recieve) my_adr <= my_adr+2;
       o_wb_rdt <= mem[addr];
    end
 

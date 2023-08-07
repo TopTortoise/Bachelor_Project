@@ -109,7 +109,6 @@ always @(posedge i_wb_clk) begin
         begin
             if(clock_count < clks_per_bit-1)
                 begin
-                    //temp_done <= 1'b1;
                     clock_count <= clock_count + 1;
                     state <= STOP;
                 end
