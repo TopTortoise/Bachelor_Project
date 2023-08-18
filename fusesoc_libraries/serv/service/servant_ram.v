@@ -6,14 +6,14 @@ module servant_ram
     parameter RESET_STRATEGY = "",
     parameter memfile = "")
    (input wire 		i_wb_clk,
-    input wire    uart_clk,//
+   // input wire    uart_clk,//
     input wire 		i_wb_rst,
     input wire [aw-1:2] i_wb_adr,
     input wire [31:0] 	i_wb_dat,
     input wire [3:0] 	i_wb_sel,
     input wire 		i_wb_we,
     input wire 		i_wb_cyc,
-    input wire i_uart_dat,//
+    //input wire i_uart_dat,//
     output reg [31:0] 	o_wb_rdt,
     //output wire o_uart,
     output reg 		o_wb_ack);

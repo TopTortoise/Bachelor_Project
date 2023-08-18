@@ -81,11 +81,8 @@ module service
       .i_wb_we  (we) ,
       .i_wb_sel (sel),
       .i_wb_dat (dat),
-      .i_uart_dat(i_data),
-      .uart_clk(i_clk),
       .o_wb_rdt (wb_mem_rdt),
-      .o_wb_ack (wb_mem_ack),
-     // .o_uart(o_data)
+      .o_wb_ack (wb_mem_ack)
     );
 
   //uart_rx
@@ -140,23 +137,29 @@ module service
   wire [31:0] dat;
   wire [31:0] adr;
 
+  wire [31:0] temp_adr;
+
   //choose when to save data into ram
   reg recieve = 0;
+  reg add = 0;
 
   always @(posedge wb_clk) begin
     //for testing sendnin data to pc
-    if (pc_active) begin
-      pc_active <= 0;
-    end
+    pc_active <= 0;
+    
     //if(recieve)begin
     //    pc_active <= 1;
     //    data_to <= wb_mem_rdt[7:0];
     //end
 //
     //
-    if(recieve) my_adr <= my_adr + 2;
+    //if(recieve) my_adr <= my_adr + 2;
 
-    recieve <= rx_done;
+    //recieve <= 0;
+  if(rx_done&!add)
+    recieve <= 1;
+  else
+    recieve <= 0;
 
     if(adr == 'h00A00000)begin
       data_to <= wb_mem_rdt[7:0];
@@ -175,17 +178,46 @@ module service
         tx_active <= 1;
     end
 
-   //keep address in range
-    if(my_adr>adr_UL)my_adr <= adr_LL;
+   //keep address in rangewb_mem_cyc
+    if(my_adr>adr_UL) my_adr <= adr_LL;
 
-    adr <= wb_mem_adr&{32{!rx_done}} | my_adr&{32{rx_done&!wb_mem_cyc}};
-    cyc <= wb_mem_cyc&{!rx_done} | 1'b1&{rx_done&!wb_mem_cyc} ;
-    we  <= wb_mem_we&{!rx_done} | 1'b1&{rx_done&!wb_mem_cyc} ;
-    sel <= wb_mem_sel&{4{!rx_done}} | 4'b1111&{4{rx_done&!wb_mem_cyc}} ;
-    dat <= wb_mem_dat&{32{!rx_done}} | from_ble&{8{rx_done&!wb_mem_cyc}};
+      
+    if(add)begin
+      my_adr <= my_adr + 2;
+    end
 
-    
+
+    if(recieve)begin
+      adr <=  my_adr;
+      cyc <=  1'b1;
+      we  <=  1'b1;
+      sel <=  4'b1111;
+      dat[7:0] <=  from_ble;
+      add<=1;
+    end
+    else begin
+      adr <= wb_mem_adr;
+      cyc <= wb_mem_cyc;
+      we  <= wb_mem_we;
+      sel <= wb_mem_sel;
+      dat <= wb_mem_dat;
+      add<=0;
+    end
+    //adr <= wb_mem_adr&{32{!rx_done}} | my_adr&{32{rx_done}};
+    //cyc <= wb_mem_cyc&{!rx_done} | 1'b1&{rx_done} ;
+    //we  <= wb_mem_we&{!rx_done} | 1'b1&{rx_done} ;
+    //sel <= wb_mem_sel&{4{!rx_done}} | 4'b1111&{4{rx_done}} ;
+    //dat <= wb_mem_dat&{32{!rx_done}} | from_ble&{8{rx_done}};
   end
+
+  //always @(posedge i_clk) begin
+  //   pc_active <= 0;
+  //   if(rx_done) pc_active <= 1;
+  //   data_to <= wb_mem_rdt[7:0];
+  //end
+
+
+  //assign my_adr = temp_adr&{32{!recieve}} | my_adr&{32{!recieve}};
     //if recieve save BLE data if not recieve save dat from serv
      //assign recieve = rx_done;
    // assign adr = wb_mem_adr&{32{!recieve}} | my_adr&{32{recieve}};
@@ -194,7 +226,7 @@ module service
    // assign sel = wb_mem_sel&{4{!recieve}} | 4'b1111&{4{recieve}} ;
    // assign dat = wb_mem_dat&{32{!recieve}} | from_ble&{8{recieve}};
 
-     assign q1 = 4'b0101;
+     assign q1 = 4'b1001;
   
 
 endmodule
