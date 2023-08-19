@@ -9,4 +9,9 @@
 all relevant files for the project are in the service directory.
 
 
+## TODO:
+
+- When scanning for devices the command for stopping the scan doesn't get sent when the DELAY gets increased 
+
+
 

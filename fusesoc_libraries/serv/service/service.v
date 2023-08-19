@@ -144,19 +144,10 @@ module service
   reg add = 0;
 
   always @(posedge wb_clk) begin
-    //for testing sendnin data to pc
-    pc_active <= 0;
     
-    //if(recieve)begin
-    //    pc_active <= 1;
-    //    data_to <= wb_mem_rdt[7:0];
-    //end
-//
-    //
-    //if(recieve) my_adr <= my_adr + 2;
-
+    //for testing sending data to pc
+    pc_active <= 0;
   //ensures that recieve is only available for 1 clk tick
-  
   if(rx_done&!add)
     recieve <= 1;
   else
@@ -168,13 +159,13 @@ module service
     end
 
     
-    //so it doesnt send it forever
+    //so it doesn't send data forever
     if (tx_active) begin
       tx_active <= 0;
     end
 
     //tx
-    if((adr == 'h00F00000))begin //send data to ble_tx_active
+    if(wb_mem_adr == 'h00F00000)begin //send data to ble_tx_active
         data_to_ble <= wb_mem_rdt[7:0];
         tx_active <= 1;
     end
@@ -204,28 +195,8 @@ module service
       dat <= wb_mem_dat;
       add<=0;
     end
-    //adr <= wb_mem_adr&{32{!rx_done}} | my_adr&{32{rx_done}};
-    //cyc <= wb_mem_cyc&{!rx_done} | 1'b1&{rx_done} ;
-    //we  <= wb_mem_we&{!rx_done} | 1'b1&{rx_done} ;
-    //sel <= wb_mem_sel&{4{!rx_done}} | 4'b1111&{4{rx_done}} ;
-    //dat <= wb_mem_dat&{32{!rx_done}} | from_ble&{8{rx_done}};
   end
 
-  //always @(posedge i_clk) begin
-  //   pc_active <= 0;
-  //   if(rx_done) pc_active <= 1;
-  //   data_to <= wb_mem_rdt[7:0];
-  //end
-
-
-  //assign my_adr = temp_adr&{32{!recieve}} | my_adr&{32{!recieve}};
-    //if recieve save BLE data if not recieve save dat from serv
-     //assign recieve = rx_done;
-   // assign adr = wb_mem_adr&{32{!recieve}} | my_adr&{32{recieve}};
-   // assign cyc = wb_mem_cyc&{!recieve} | 1'b1&{recieve} ;
-   // assign we = wb_mem_we&{!recieve} | 1'b1&{recieve} ;
-   // assign sel = wb_mem_sel&{4{!recieve}} | 4'b1111&{4{recieve}} ;
-   // assign dat = wb_mem_dat&{32{!recieve}} | from_ble&{8{recieve}};
 
      assign q1 = 4'b1001;
   

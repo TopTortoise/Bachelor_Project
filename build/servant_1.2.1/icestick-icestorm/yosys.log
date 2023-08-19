@@ -364,59 +364,59 @@ Successfully finished Verilog frontend.
 28. Executing AST frontend in derive mode using pre-parsed AST for module `\service'.
 Parameter \memfile = 544'0010111101101000011011110110110101100101001011110111000001100001011101010110110000101111010000100110000101100011011010000110010101101100011011110111001001011111010100000111001001101111011010100110010101100011011101000010111101100110011101010111001101100101011100110110111101100011010111110110110001101001011000100111001001100001011100100110100101100101011100110010111101110011011001010111001001110110001011110111001101110111001011110111001101101001011011010111000001101100011001010101111101000010010011000100010100101110011010000110010101111000
 Generating RTLIL representation for module `$paramod$f1f69d35145dc335c26e91ab6cce31100837bffd\service'.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:148.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:166.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:172.
-Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:177.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:178.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:149.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:158.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:164.
+Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:169.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:170.
+Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:183.
+Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:184.
+Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:185.
+Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:186.
+Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:187.
 Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:191.
 Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:192.
 Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:193.
 Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:194.
 Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:195.
-Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:199.
-Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:200.
-Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:201.
-Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:202.
-Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:203.
 
 29. Executing AST frontend in derive mode using pre-parsed AST for module `\service'.
 Parameter \memsize = 7168
 Generating RTLIL representation for module `$paramod\service\memsize=7168'.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:148.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:166.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:172.
-Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:177.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:178.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:149.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:158.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:164.
+Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:169.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:170.
+Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:183.
+Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:184.
+Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:185.
+Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:186.
+Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:187.
 Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:191.
 Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:192.
 Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:193.
 Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:194.
 Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:195.
-Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:199.
-Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:200.
-Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:201.
-Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:202.
-Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:203.
 
 30. Executing AST frontend in derive mode using pre-parsed AST for module `\service'.
 Parameter \PLL = 80'01001001010000110100010100110100001100000101111101000011010011110101001001000101
 Generating RTLIL representation for module `$paramod$0433322fa94b7eb73a1cac7cc4070f05a56d78f6\service'.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:148.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:166.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:172.
-Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:177.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:178.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:149.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:158.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:164.
+Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:169.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:170.
+Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:183.
+Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:184.
+Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:185.
+Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:186.
+Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:187.
 Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:191.
 Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:192.
 Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:193.
 Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:194.
 Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:195.
-Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:199.
-Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:200.
-Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:201.
-Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:202.
-Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:203.
 
 31. Executing SYNTH_ICE40 pass.
 
@@ -477,21 +477,21 @@ Successfully finished Verilog frontend.
 
 31.3. Executing AST frontend in derive mode using pre-parsed AST for module `\service'.
 Generating RTLIL representation for module `\service'.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:148.
-Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:166.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:172.
-Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:177.
-Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:178.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:149.
+Warning: wire '\pc_active' is assigned in a block at src/servant_1.2.1/service/service.v:158.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:164.
+Warning: wire '\data_to_ble' is assigned in a block at src/servant_1.2.1/service/service.v:169.
+Warning: wire '\tx_active' is assigned in a block at src/servant_1.2.1/service/service.v:170.
+Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:183.
+Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:184.
+Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:185.
+Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:186.
+Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:187.
 Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:191.
 Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:192.
 Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:193.
 Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:194.
 Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:195.
-Warning: wire '\adr' is assigned in a block at src/servant_1.2.1/service/service.v:199.
-Warning: wire '\cyc' is assigned in a block at src/servant_1.2.1/service/service.v:200.
-Warning: wire '\we' is assigned in a block at src/servant_1.2.1/service/service.v:201.
-Warning: wire '\sel' is assigned in a block at src/servant_1.2.1/service/service.v:202.
-Warning: wire '\dat' is assigned in a block at src/servant_1.2.1/service/service.v:203.
 
 31.3.1. Analyzing design hierarchy..
 Top module:  \service
@@ -1425,7 +1425,7 @@ Running muxtree optimizer on module \service..
       Replacing known input bits on port A of cell $procmux$1104: \tx_active -> 1'0
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~113 debug messages>
+<suppressed ~114 debug messages>
 
 31.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -1488,7 +1488,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~113 debug messages>
+<suppressed ~114 debug messages>
 
 31.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -1521,7 +1521,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~113 debug messages>
+<suppressed ~114 debug messages>
 
 31.11.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -1543,10 +1543,10 @@ Optimizing module service.
 
 31.12. Executing WREDUCE pass (reducing word size of cells).
 Removed top 21 address bits (of 32) from memory init port service.$techmap\ram.$meminit$\mem$src/servant_1.2.1/service/servant_ram.v:68$102 (ram.mem).
-Removed top 8 bits (of 32) from port B of cell service.$eq$src/servant_1.2.1/service/service.v:164$34 ($eq).
-Removed top 8 bits (of 32) from port B of cell service.$eq$src/servant_1.2.1/service/service.v:176$35 ($eq).
-Removed top 8 bits (of 32) from port B of cell service.$gt$src/servant_1.2.1/service/service.v:182$36 ($gt).
-Removed top 30 bits (of 32) from port B of cell service.$add$src/servant_1.2.1/service/service.v:186$37 ($add).
+Removed top 8 bits (of 32) from port B of cell service.$eq$src/servant_1.2.1/service/service.v:156$34 ($eq).
+Removed top 8 bits (of 32) from port B of cell service.$eq$src/servant_1.2.1/service/service.v:168$35 ($eq).
+Removed top 8 bits (of 32) from port B of cell service.$gt$src/servant_1.2.1/service/service.v:174$36 ($gt).
+Removed top 30 bits (of 32) from port B of cell service.$add$src/servant_1.2.1/service/service.v:178$37 ($add).
 Removed top 7 bits (of 32) from FF cell service.$techmap\ram.$procdff$1181 ($dff).
 Removed top 8 bits (of 32) from FF cell service.$techmap\ram.$procdff$1178 ($dff).
 Removed top 16 bits (of 32) from FF cell service.$techmap\ram.$procdff$1174 ($dff).
@@ -1678,7 +1678,7 @@ Removed 0 unused cells and 99 unused wires.
 
 31.19. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module service:
-  creating $macc model for $add$src/servant_1.2.1/service/service.v:186$37 ($add).
+  creating $macc model for $add$src/servant_1.2.1/service/service.v:178$37 ($add).
   creating $macc model for $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:112$69 ($add).
   creating $macc model for $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:97$67 ($add).
   creating $macc model for $techmap\servant.cpu.cpu.alu.$add$src/serv_1.2.1/rtl/serv_alu.v:34$303 ($add).
@@ -1721,8 +1721,8 @@ Extracting $alu and $macc cells in module service:
   creating $alu model for $macc $techmap\tx_to_pc.$add$src/servant_1.2.1/service/uart_tx.v:77$49.
   creating $alu model for $macc $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:97$67.
   creating $alu model for $macc $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:112$69.
-  creating $alu model for $macc $add$src/servant_1.2.1/service/service.v:186$37.
-  creating $alu model for $gt$src/servant_1.2.1/service/service.v:182$36 ($gt): new $alu
+  creating $alu model for $macc $add$src/servant_1.2.1/service/service.v:178$37.
+  creating $alu model for $gt$src/servant_1.2.1/service/service.v:174$36 ($gt): new $alu
   creating $alu model for $techmap\rx_from_ble.$lt$src/servant_1.2.1/service/uart_rx.v:110$68 ($lt): new $alu
   creating $alu model for $techmap\servant.timer.$ge$src/servant_1.2.1/service/servant_timer.v:30$113 ($ge): new $alu
   creating $alu model for $techmap\tx_to_ble.$lt$src/servant_1.2.1/service/uart_tx.v:50$43 ($lt): new $alu
@@ -1731,8 +1731,8 @@ Extracting $alu and $macc cells in module service:
   creating $alu cell for $techmap\tx_to_ble.$lt$src/servant_1.2.1/service/uart_tx.v:50$43: $auto$alumacc.cc:474:replace_alu$1294
   creating $alu cell for $techmap\servant.timer.$ge$src/servant_1.2.1/service/servant_timer.v:30$113: $auto$alumacc.cc:474:replace_alu$1299
   creating $alu cell for $techmap\rx_from_ble.$lt$src/servant_1.2.1/service/uart_rx.v:110$68: $auto$alumacc.cc:474:replace_alu$1312
-  creating $alu cell for $gt$src/servant_1.2.1/service/service.v:182$36: $auto$alumacc.cc:474:replace_alu$1317
-  creating $alu cell for $add$src/servant_1.2.1/service/service.v:186$37: $auto$alumacc.cc:474:replace_alu$1322
+  creating $alu cell for $gt$src/servant_1.2.1/service/service.v:174$36: $auto$alumacc.cc:474:replace_alu$1317
+  creating $alu cell for $add$src/servant_1.2.1/service/service.v:178$37: $auto$alumacc.cc:474:replace_alu$1322
   creating $alu cell for $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:112$69: $auto$alumacc.cc:474:replace_alu$1325
   creating $alu cell for $techmap\rx_from_ble.$add$src/servant_1.2.1/service/uart_rx.v:97$67: $auto$alumacc.cc:474:replace_alu$1328
   creating $alu cell for $techmap\tx_to_pc.$add$src/servant_1.2.1/service/uart_tx.v:77$49: $auto$alumacc.cc:474:replace_alu$1331
@@ -1768,7 +1768,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~105 debug messages>
+<suppressed ~106 debug messages>
 
 31.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -1798,7 +1798,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~105 debug messages>
+<suppressed ~106 debug messages>
 
 31.20.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -2061,12 +2061,12 @@ Successfully finished Verilog frontend.
 
 31.26.2. Continuing TECHMAP pass.
 Using template $paramod$590fc92e73966fe892bde63e9987a4c2f78effe8\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
-Using template $paramod$804e18c4c84e4a9748378e31c7d4a334fe6ad2f8\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
-Using template $paramod$cc55b443195d5b2ba47c2d0d5520d0c3b22a49e8\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
+Using template $paramod$82ae4f0050d392214cbcfa68b295279b8938e802\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
+Using template $paramod$6ebd6a0cacf41a358c0a9259ff83b3f1c9431718\$__ICE40_RAM4K_M0 for cells of type $__ICE40_RAM4K_M0.
 Using template $paramod\$__ICE40_RAM4K_M123\CFG_ABITS=11\CFG_DBITS=2\CLKPOL2=1\CLKPOL3=1 for cells of type $__ICE40_RAM4K_M123.
 Using template $paramod$4200c10d2e07b3359d49ca78f8f6d43ec6f7e316\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
-Using template $paramod$149ebf6d5b09d1509cbaa4dfe62ee2d2ac4d67ce\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
-Using template $paramod$05c2d5a12193daec10832c52a42d10c5c3df40f5\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
+Using template $paramod$d98de1fae17309a4e7bd896ddf1fafcaeee12e24\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
+Using template $paramod$cd01a7e080046ec380d40bb318bc121fb77759e4\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
 Using template $paramod$c580e88c60026da015257f05680f05599f0d3ee1\$__ICE40_RAM4K for cells of type $__ICE40_RAM4K.
 No more expansions possible.
 <suppressed ~195 debug messages>
@@ -2110,7 +2110,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~112 debug messages>
+<suppressed ~113 debug messages>
 
 31.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -2254,7 +2254,7 @@ Running muxtree optimizer on module \service..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~113 debug messages>
+<suppressed ~114 debug messages>
 
 31.30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \service.
@@ -2354,8 +2354,8 @@ Optimizing module service.
 
 31.32.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\service'.
-<suppressed ~351 debug messages>
-Removed a total of 117 cells.
+<suppressed ~270 debug messages>
+Removed a total of 90 cells.
 
 31.32.4. Executing OPT_RMDFF pass (remove dff with constant values).
 
@@ -2913,37 +2913,37 @@ FF init value for cell $auto$simplemap.cc:420:simplemap_dff$2020 (SB_DFFE): \my_
 31.39. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
 Merging set/reset $_MUX_ cells into SB_FFs in service.
   Merging $auto$simplemap.cc:277:simplemap_mux$2124 (A=1'0, B=$techmap\ram.$and$src/servant_1.2.1/service/servant_ram.v:52$87_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2123 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1963 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [7], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2023 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1957 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [1], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2017 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1963 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [7], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2023 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1957 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [1], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2017 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$1958 (A=1'0, B=$auto$alumacc.cc:474:replace_alu$1317.BB [2], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2018 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1959 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [3], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2019 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1956 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [0], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2016 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1959 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [3], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2019 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1956 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [0], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2016 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3642 (A=1'0, B=$techmap\servant.cpu.cpu.csr.$and$src/serv_1.2.1/rtl/serv_csr.v:79$191_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3640 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1961 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [5], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2021 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1961 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [5], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2021 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3401 (A=1'0, B=$techmap\servant.cpu.cpu.state.$or$src/serv_1.2.1/rtl/serv_state.v:169$634_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3379 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1970 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [14], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2030 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1971 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [15], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2031 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1972 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [16], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2032 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1973 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [17], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2033 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1970 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [14], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2030 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1971 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [15], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2031 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1972 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [16], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2032 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1973 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [17], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2033 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2730 (A=1'0, B=\servant.cpu.cpu.bufreg2.dat [1], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2665 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2987 (A=$techmap\servant.cpu.rf_ram_if.$procmux$739_Y [0], B=1'0, S=\servant.cpu.rf_ram_if.i_wreq) into $auto$simplemap.cc:420:simplemap_dff$2979 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2801 (A=1'0, B=$techmap\servant.timer.$add$src/servant_1.2.1/service/servant_timer.v:29$112_Y [8], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2704 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1980 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [24], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2040 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1981 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [25], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2041 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1982 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [26], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2042 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1983 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [27], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2043 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1984 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [28], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2044 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1985 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [29], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2045 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1986 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [30], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2046 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1987 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [31], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2047 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1980 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [24], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2040 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1981 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [25], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2041 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1982 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [26], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2042 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1983 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [27], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2043 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1984 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [28], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2044 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1985 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [29], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2045 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1986 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [30], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2046 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1987 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [31], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2047 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$1910 (A=\wb_mem_cyc, B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2048 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$1912 (A=\wb_mem_sel [1], B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2051 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$1915 (A=\wb_mem_we, B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2049 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$1913 (A=\wb_mem_sel [2], B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2052 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$1911 (A=\wb_mem_sel [0], B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2050 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1964 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [8], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2024 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1962 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [6], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2022 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1966 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [10], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2026 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1964 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [8], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2024 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1962 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [6], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2022 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1966 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [10], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2026 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$1914 (A=\wb_mem_sel [3], B=1'1, S=\recieve) into $auto$simplemap.cc:420:simplemap_dff$2053 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$4964 (A=1'0, B=$techmap$techmap\rx_from_ble.$procmux$981.$reduce_or$/usr/bin/../share/yosys/techmap.v:441$2246_Y, S=$auto$simplemap.cc:127:simplemap_reduce$4871) into $auto$simplemap.cc:420:simplemap_dff$2222 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2495 (A=1'0, B=$techmap\tx_to_ble.$procmux$1018_Y [3], S=$auto$opt_reduce.cc:132:opt_mux$1216) into $auto$simplemap.cc:420:simplemap_dff$2387 (SB_DFF).
@@ -2954,18 +2954,18 @@ Merging set/reset $_MUX_ cells into SB_FFs in service.
   Merging $auto$simplemap.cc:277:simplemap_mux$2498 (A=1'0, B=$techmap\tx_to_ble.$procmux$1018_Y [6], S=$auto$opt_reduce.cc:132:opt_mux$1216) into $auto$simplemap.cc:420:simplemap_dff$2390 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$4270 (A=1'0, B=$techmap$techmap\tx_to_ble.$procmux$1034.$reduce_or$/usr/bin/../share/yosys/techmap.v:441$2246_Y, S=$auto$opt_reduce.cc:132:opt_mux$1216) into $auto$simplemap.cc:420:simplemap_dff$2392 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2492 (A=1'0, B=$techmap\tx_to_ble.$procmux$1018_Y [0], S=$auto$opt_reduce.cc:132:opt_mux$1216) into $auto$simplemap.cc:420:simplemap_dff$2384 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1974 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [18], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2034 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1974 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [18], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2034 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2625 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [1], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2574 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2629 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [5], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2578 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2626 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [2], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2575 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2627 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [3], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2576 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2628 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [4], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2577 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2630 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [6], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2579 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1975 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [19], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2035 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1975 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [19], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2035 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$4371 (A=1'0, B=$techmap$techmap\tx_to_pc.$procmux$1034.$reduce_or$/usr/bin/../share/yosys/techmap.v:441$2246_Y, S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2581 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2624 (A=1'0, B=$techmap\tx_to_pc.$procmux$1018_Y [0], S=$auto$opt_reduce.cc:132:opt_mux$1218) into $auto$simplemap.cc:420:simplemap_dff$2573 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2731 (A=1'0, B=\servant.cpu.cpu.bufreg2.dat [2], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2666 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1976 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [20], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2036 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1976 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [20], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2036 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2732 (A=1'0, B=\servant.cpu.cpu.bufreg2.dat [3], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2667 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2733 (A=1'0, B=\servant.cpu.cpu.bufreg2.dat [4], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2668 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2734 (A=1'0, B=\servant.cpu.cpu.bufreg2.dat [5], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2669 (SB_DFFE).
@@ -3027,7 +3027,7 @@ Merging set/reset $_MUX_ cells into SB_FFs in service.
   Merging $auto$simplemap.cc:277:simplemap_mux$2824 (A=1'0, B=$techmap\servant.timer.$add$src/servant_1.2.1/service/servant_timer.v:29$112_Y [31], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2727 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2811 (A=1'0, B=$techmap\servant.timer.$add$src/servant_1.2.1/service/servant_timer.v:29$112_Y [18], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2714 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2990 (A=$techmap\servant.cpu.rf_ram_if.$procmux$739_Y [3], B=1'0, S=\servant.cpu.rf_ram_if.i_wreq) into $auto$simplemap.cc:420:simplemap_dff$2982 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1977 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [21], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2037 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1977 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [21], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2037 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$2988 (A=$techmap\servant.cpu.rf_ram_if.$procmux$739_Y [1], B=1'1, S=\servant.cpu.rf_ram_if.i_wreq) into $auto$simplemap.cc:420:simplemap_dff$2980 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2997 (A=1'0, B=\servant.cpu.rf_ram_if.i_rreq, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2976 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3000 (A=1'0, B=\servant.cpu.rf_ram_if.i_rdata [1], S=\servant.cpu.rf_ram_if.rcnt [0]) into $auto$simplemap.cc:420:simplemap_dff$2985 (SB_DFF).
@@ -3036,12 +3036,12 @@ Merging set/reset $_MUX_ cells into SB_FFs in service.
   Merging $auto$simplemap.cc:277:simplemap_mux$2998 (A=1'0, B=\servant.cpu.rf_ram_if.rreq_r, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2978 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2875 (A=1'0, B=$techmap\servant.servant_mux.$and$src/servant_1.2.1/service/servant_mux.v:44$120_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2874 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$2819 (A=1'0, B=$techmap\servant.timer.$add$src/servant_1.2.1/service/servant_timer.v:29$112_Y [26], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$2722 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1969 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [13], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2029 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1969 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [13], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2029 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3402 (A=1'0, B=\servant.cpu.cpu.state.o_cnt_r [0], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3380 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3403 (A=1'0, B=\servant.cpu.cpu.state.o_cnt_r [1], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3381 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3404 (A=1'0, B=\servant.cpu.cpu.state.o_cnt_r [2], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3382 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3399 (A=1'0, B=$techmap\servant.cpu.cpu.state.$add$src/serv_1.2.1/rtl/serv_state.v:168$629_Y [1], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3386 (SB_DFF).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1967 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [11], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2027 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1967 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [11], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2027 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3397 (A=1'0, B=$techmap\servant.cpu.cpu.state.$and$src/serv_1.2.1/rtl/serv_state.v:144$628_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3383 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3400 (A=1'0, B=$techmap\servant.cpu.cpu.state.$add$src/serv_1.2.1/rtl/serv_state.v:168$629_Y [2], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3387 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3800 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [3], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3733 (SB_DFFE).
@@ -3053,18 +3053,18 @@ Merging set/reset $_MUX_ cells into SB_FFs in service.
   Merging $auto$simplemap.cc:277:simplemap_mux$3820 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [23], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3753 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3821 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [24], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3754 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3822 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [25], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3755 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1968 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [12], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2028 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1968 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [12], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2028 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3824 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [27], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3757 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3825 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [28], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3758 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3826 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [29], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3759 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3827 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [30], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3760 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3828 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [31], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3761 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3829 (A=1'0, B=\servant.cpu.cpu.ctrl.new_pc, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3762 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1965 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [9], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2025 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1965 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [9], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2025 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3396 (A=1'0, B=$techmap\servant.cpu.cpu.state.$and$src/serv_1.2.1/rtl/serv_state.v:141$627_Y, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3376 (SB_DFF).
   Merging $auto$simplemap.cc:277:simplemap_mux$3646 (A=1'0, B=\servant.cpu.cpu.csr.csr_in, S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3637 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3799 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [2], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3732 (SB_DFFE).
-  Merging $auto$simplemap.cc:277:simplemap_mux$1960 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:186$37_Y [4], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2020 (SB_DFFE).
+  Merging $auto$simplemap.cc:277:simplemap_mux$1960 (A=1'0, B=$add$src/servant_1.2.1/service/service.v:178$37_Y [4], S=\add) into $auto$simplemap.cc:420:simplemap_dff$2020 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3801 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [4], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3734 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3802 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [5], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3735 (SB_DFFE).
   Merging $auto$simplemap.cc:277:simplemap_mux$3804 (A=1'0, B=\servant.cpu.cpu.ctrl.o_ibus_adr [7], S=\clock_gen.pll.rst_reg [1]) into $auto$simplemap.cc:420:simplemap_dff$3737 (SB_DFFE).
@@ -3138,7 +3138,7 @@ No more expansions possible.
 31.42. Executing ABC pass (technology mapping using ABC).
 
 31.42.1. Extracting gate netlist of module `\service' to `<abc-temp-dir>/input.blif'..
-Extracted 1722 gates and 2389 wires to a netlist network with 665 inputs and 409 outputs.
+Extracted 1749 gates and 2416 wires to a netlist network with 665 inputs and 409 outputs.
 
 31.42.1.1. Executing ABC.
 Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
@@ -3159,18 +3159,18 @@ ABC: + if
 ABC: + mfs2 
 ABC: + lutpack -S 1 
 ABC: + dress 
-ABC: Total number of equiv classes                =     716.
-ABC: Participating nodes from both networks       =    1540.
-ABC: Participating nodes from the first network   =     719. (  84.00 % of nodes)
-ABC: Participating nodes from the second network  =     821. (  95.91 % of nodes)
-ABC: Node pairs (any polarity)                    =     719. (  84.00 % of names can be moved)
-ABC: Node pairs (same polarity)                   =     573. (  66.94 % of names can be moved)
-ABC: Total runtime =     0.03 sec
+ABC: Total number of equiv classes                =     715.
+ABC: Participating nodes from both networks       =    1543.
+ABC: Participating nodes from the first network   =     718. (  83.29 % of nodes)
+ABC: Participating nodes from the second network  =     825. (  95.71 % of nodes)
+ABC: Node pairs (any polarity)                    =     718. (  83.29 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     586. (  67.98 % of names can be moved)
+ABC: Total runtime =     0.05 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 31.42.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:     1708
-ABC RESULTS:        internal signals:     1315
+ABC RESULTS:              $lut cells:     1720
+ABC RESULTS:        internal signals:     1342
 ABC RESULTS:           input signals:      665
 ABC RESULTS:          output signals:      409
 Removing temp directory.
@@ -3206,127 +3206,129 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 31.43.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'1000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000011101110111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'10001111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'00110101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000111110111011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100000000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011101000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11111000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'00111010 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1110111100000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'00000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01010011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0011101000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11111000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110100010001000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111111110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1011101100001111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111000001110111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111000010001000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01110000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100001101110101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01010011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10100011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00011111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001011101110111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011000010111011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00000111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01001111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111101011110011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'10110000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'10000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'10100011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'0001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'10101100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111100000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'11001010 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11110100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0011111110100000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111000001110111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111000010111011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0111011111110000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11010000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000110000001010 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000000001111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1011111100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111100000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1110000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111100001110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11110100 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1011000000001011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111100011111111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1001000000001001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1001000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111000000010001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111000001000100 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1100111110100000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111110000001010 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111100001011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00000111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1000011101111000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111111100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1011000010111011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=2\LUT=4'0111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1110100010001000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1100010100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111000000010001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111000001000100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00001110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01011100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00011100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1100101010101100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1100101011001100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111011100001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011101100001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111000001110111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111000010001000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000111101110111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1000111100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100000101 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111000011101110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111000100010111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111000110011111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0110111111111111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0011101000000011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'0110 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1001011000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'00001011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0111000000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100111100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000111000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0110111111111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111100000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0011111000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0001010000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111011100001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100000100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00011100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100101010101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100101011001100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10101100 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=3\LUT=8'10010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1001000000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111110000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000011011110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100010100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00001110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01011100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111100000000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=2\LUT=4'1001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111101011000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111111110100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1000000011111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11111110 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000101000001100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0101001111111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000110111110000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111000010111011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1010110000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000111110000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0100010011110000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0101000011001111 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1000100011110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100111100000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1110100000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'10010110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000001110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'01001111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111101000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000010111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111101011000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01000001 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000001101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111101000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0111000100010111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011111001000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100110011001010 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1010101110111010 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000111101110111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11000101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1011111000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111100001110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0001011101110111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100000011111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'11111110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100001101110101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111011100001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011111110100000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'1111111100010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=3\LUT=8'00010100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1100101000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'1111111100000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000010111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000000011111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1101010000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111110110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111100011111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011111000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100000011111111 for cells of type $lut.
 No more expansions possible.
-<suppressed ~2150 debug messages>
-Removed 0 unused cells and 1704 unused wires.
+<suppressed ~2178 debug messages>
+Removed 0 unused cells and 1716 unused wires.
 
 31.44. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -3341,21 +3343,21 @@ Removed 0 unused modules.
 
 === service ===
 
-   Number of wires:               1534
-   Number of wire bits:           4319
+   Number of wires:               1540
+   Number of wire bits:           4325
    Number of public wires:         467
    Number of public wire bits:    2930
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               1585
+   Number of cells:               1591
      SB_CARRY                      170
      SB_DFF                         73
      SB_DFFE                       200
      SB_DFFESR                     102
      SB_DFFSR                       64
      SB_DFFSS                        7
-     SB_LUT4                       953
+     SB_LUT4                       959
      SB_PLL40_CORE                   1
      SB_RAM40_4K                    15
 
@@ -3366,7 +3368,7 @@ found and reported 0 problems.
 32. Executing JSON backend.
 
 Warnings: 16 unique messages, 61 total
-End of script. Logfile hash: 33b1fe68a6
-CPU: user 2.22s system 0.03s, MEM: 72.38 MB total, 54.15 MB resident
+End of script. Logfile hash: c38897c3c1
+CPU: user 2.33s system 0.02s, MEM: 83.68 MB total, 65.54 MB resident
 Yosys 0.9 (git sha1 1979e0b)
-Time spent: 24% 24x opt_clean (0 sec), 15% 24x opt_expr (0 sec), ...
+Time spent: 23% 24x opt_clean (0 sec), 16% 24x opt_expr (0 sec), ...
