@@ -143,15 +143,15 @@ module service
   reg recieve = 0;
   reg add = 0;
 
-  always @(posedge wb_clk) begin
+ always @(posedge i_clk) begin
     
     //for testing sending data to pc
     pc_active <= 0;
   //ensures that recieve is only available for 1 clk tick
-  if(rx_done&!add)
-    recieve <= 1;
-  else
-    recieve <= 0;
+  //if(rx_done&!add)
+  //  recieve <= 1;
+  //else
+  //  recieve <= 0;
 
     if(adr == 'h00A00000)begin
       data_to <= wb_mem_rdt[7:0];
@@ -179,7 +179,7 @@ module service
     end
 
 
-    if(recieve)begin
+  if(rx_done&!add)begin
       adr <=  my_adr;
       cyc <=  1'b1;
       we  <=  1'b1;
