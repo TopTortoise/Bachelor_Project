@@ -126,7 +126,7 @@ module service
     .o_wb_rdt(to_pc)
   );
 
-  //assign to_pc = o_data;
+  //assign to_pc = i_data;
 
   reg [31:0] my_adr = adr_LL;
 
@@ -139,66 +139,59 @@ module service
 
   wire [31:0] temp_adr;
 
-  //choose when to save data into ram
-  reg recieve = 0;
-  reg add = 0;
 
-  always @(posedge wb_clk) begin
-    
+
+  always @(posedge i_clk) begin
+    if(wb_rst)begin
+      pc_active <= 0;
+      tx_active <= 0;
+      //adr <=  wb_mem_adr;
+      //cyc <=  wb_mem_cyc ;
+      //we  <=  wb_mem_we ;
+      //sel <=  wb_mem_sel ;
+      //dat <=  wb_mem_dat ;
+    end
+    else
+    begin
     //for testing sending data to pc
     pc_active <= 0;
-  //ensures that recieve is only available for 1 clk tick
-  if(rx_done&!add)
-    recieve <= 1;
-  else
-    recieve <= 0;
 
-    if(adr == 'h00A00000)begin
-      data_to <= wb_mem_rdt[7:0];
-      pc_active <= 1;
-    end
+    //
+    case (wb_mem_adr)
+      'h00A00000:// tx -> pc
+      begin
+        data_to <= wb_mem_rdt[7:0];
+        pc_active <= 1;
+      end
+      'h00F00000:// tx -> BLE
+      begin
+        data_to_ble <= wb_mem_rdt[7:0];
+        tx_active <= 1;
+      end
+    endcase
 
-    
-    //so it doesn't send data forever
     if (tx_active) begin
       tx_active <= 0;
     end
 
-    //tx
-    if(wb_mem_adr == 'h00F00000)begin //send data to ble_tx_active
-        data_to_ble <= wb_mem_rdt[7:0];
-        tx_active <= 1;
-    end
-
-   //keep address in rangewb_mem_cyc
+   //keep address in range of 
     if(my_adr>adr_UL) my_adr <= adr_LL;
 
-    //needed that it only increments the adress once per byte
-    if(add)begin
-      my_adr <= my_adr + 2;
-    end
 
 
-    if(recieve)begin
-      adr <=  my_adr;
-      cyc <=  1'b1;
-      we  <=  1'b1;
-      sel <=  4'b1111;
-      dat[7:0] <=  from_ble;
-      add<=1;
-    end
-    else begin
-      adr <= wb_mem_adr;
-      cyc <= wb_mem_cyc;
-      we  <= wb_mem_we;
-      sel <= wb_mem_sel;
-      dat <= wb_mem_dat;
-      add<=0;
+
+    my_adr <= rx_done? my_adr+4 : my_adr;
+
     end
   end
 
+    assign  adr = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? my_adr   : wb_mem_adr;
+    assign  cyc = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 1'b1     : wb_mem_cyc;
+    assign  we  = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 1'b1     : wb_mem_we;
+    assign  sel = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 4'b1111  : wb_mem_sel;
+    assign  dat = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? from_ble : wb_mem_dat;
 
-     assign q1 = 4'b1001;
+    assign q1 = 4'b0001;
   
 
 endmodule
