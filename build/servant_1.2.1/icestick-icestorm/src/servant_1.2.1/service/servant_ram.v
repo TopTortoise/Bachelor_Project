@@ -25,26 +25,7 @@ module servant_ram
    wire [aw-3:0] 	addr = i_wb_adr[aw-1:2];
 
    wire[31:0] data = i_wb_dat;
-    //uart_rx
-    //wire rx_done;
-    //wire rx_active;
-    //wire [8-1:0] from_ble;
-    //                  //'hFFFFFFFF
-    //reg [31:0] my_adr = 'h000000BB;
-//
-//
-    //uart_rx rx_from_ble (//uart_rx in here make it work
-    //  .i_wb_clk(uart_clk),
-    //  .i_wb_dat(i_uart_dat),
-    //  .rx_done(rx_done),
-    //  .rx_active(rx_active),
-    //  .o_wb_rdt(from_ble)
-    //);
-    //reg recieve = 0;
-   //always @(posedge i_wb_clk ) begin
-   // recieve <= rx_done;
-   //end
-//
+   
    always @(posedge i_wb_clk)begin
      if (i_wb_rst & (RESET_STRATEGY != "NONE"))
        o_wb_ack <= 1'b0;

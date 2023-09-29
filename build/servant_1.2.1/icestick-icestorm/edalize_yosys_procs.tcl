@@ -18,6 +18,7 @@ read_verilog {src/serv_1.2.1/rtl/serv_top.v}
 read_verilog {src/serv_1.2.1/rtl/serv_rf_top.v}
 read_verilog {src/serv_1.2.1/rtl/serv_aligner.v}
 read_verilog {src/serv_1.2.1/rtl/serv_compdec.v}
+read_verilog {src/servant_1.2.1/service/queue.v}
 read_verilog {src/servant_1.2.1/service/servant_clock_gen.v}
 read_verilog {src/servant_1.2.1/service/servant_timer.v}
 read_verilog {src/servant_1.2.1/service/servant_gpio.v}

@@ -56,21 +56,6 @@ module service
       .i_wb_mem_rdt (wb_mem_rdt),
       .q      (q));
   
-  //keep for just in case
-  //servant_ram
-  //#(.memfile(memfile), .depth (memsize), .RESET_STRATEGY("MINI"))
-  //  ram
-  //  ( .i_wb_clk (wb_clk),
-  //    .i_wb_rst (wb_rst),
-  //    .i_wb_adr (wb_mem_adr[$clog2(memsize)-1:2]),
-  //    .i_wb_cyc (wb_mem_cyc),
-  //    .i_wb_we  (wb_mem_we) ,
-  //    .i_wb_sel (wb_mem_sel),
-  //    .i_wb_dat (wb_mem_dat),
-  //    .o_wb_rdt (wb_mem_rdt),
-  //    .o_wb_ack (wb_mem_ack)
-  //  );
-
   servant_ram
   #(.memfile(memfile), .depth (memsize), .RESET_STRATEGY("MINI"))
     ram
@@ -116,8 +101,8 @@ module service
   wire [BITS-1:0]pc_data;
   wire pc_done;
   reg [7:0] data_to;
-  //
-  //
+
+
   uart_tx tx_to_pc (
     .i_wb_clk(i_clk),
     .i_wb_dat(data_to),
@@ -126,9 +111,19 @@ module service
     .o_wb_rdt(to_pc)
   );
 
+  queue queue (
+     .i_wb_clk(i_clk),
+     .i_wb_dat(from_ble),
+     .i_wb_mem_cyc(wb_mem_cyc),
+     .i_wb_mem_we(wb_mem_we),
+     .i_rx_done(rx_done),
+     .i_wb_rst(wb_rst),
+     .o_wb_rdt(queue_dat)
+
+  );
   //assign to_pc = i_data;
 
-  reg [31:0] my_adr = adr_LL;
+  reg [31:0] ble_data_adr = adr_LL;
 
   //united ram signals
   wire cyc;
@@ -137,9 +132,9 @@ module service
   wire [31:0] dat;
   wire [31:0] adr;
 
-  wire [31:0] temp_adr;
 
-
+  wire [7:0] queue_dat;
+  wire write_queue;
 
   always @(posedge i_clk) begin
     if(wb_rst)begin
@@ -155,7 +150,10 @@ module service
     begin
     //for testing sending data to pc
     pc_active <= 0;
-
+    if(rx_done)
+      write_queue <= 1;
+    else if (!wb_mem_we&!wb_mem_cyc)
+      write_queue <= 0;
     //
     case (wb_mem_adr)
       'h00A00000:// tx -> pc
@@ -174,23 +172,23 @@ module service
       tx_active <= 0;
     end
 
-   //keep address in range of 
-    if(my_adr>adr_UL) my_adr <= adr_LL;
+   //keep address in range
+    if(ble_data_adr>adr_UL) ble_data_adr <= adr_LL;
 
 
 
 
-    my_adr <= rx_done? my_adr+4 : my_adr;
+    ble_data_adr <= rx_done? ble_data_adr+4 : ble_data_adr;
 
     end
   end
 
-    assign  adr = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? my_adr   : wb_mem_adr;
-    assign  cyc = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 1'b1     : wb_mem_cyc;
-    assign  we  = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 1'b1     : wb_mem_we;
-    assign  sel = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? 4'b1111  : wb_mem_sel;
-    assign  dat = rx_done&!wb_mem_we&!wb_mem_cyc&!wb_mem_sel[0]? from_ble : wb_mem_dat;
-
+    assign  adr = !wb_mem_we&!wb_mem_cyc&write_queue? ble_data_adr   : wb_mem_adr;
+    assign  cyc = !wb_mem_we&!wb_mem_cyc&write_queue? 1'b1     : wb_mem_cyc;
+    assign  we  = !wb_mem_we&!wb_mem_cyc&write_queue? 1'b1     : wb_mem_we;
+    assign  sel = !wb_mem_we&!wb_mem_cyc&write_queue? 4'b1111  : wb_mem_sel;
+    assign  dat = !wb_mem_we&!wb_mem_cyc&write_queue? queue_dat : wb_mem_dat;
+   // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
     assign q1 = 4'b0001;
   
 

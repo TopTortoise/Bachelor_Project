@@ -26,6 +26,7 @@ filesets:
 
   soc:
     files:
+      - service/queue.v
       - service/servant_clock_gen.v
       - service/servant_timer.v
       - service/servant_gpio.v
