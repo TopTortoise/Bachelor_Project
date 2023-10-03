@@ -3,8 +3,18 @@ module servant
 (
  input wire  wb_clk,
  input wire  wb_rst,
- output wire q);
-
+ //ram
+ input wire  i_wb_mem_ack,
+ output wire [31:0]  i_wb_mem_adr,
+ output wire i_wb_mem_cyc,
+ output wire i_wb_mem_we,
+ output wire [3:0] i_wb_mem_sel,
+ output wire [31:0]  i_wb_mem_dat,
+ input wire [31:0] i_wb_mem_rdt,
+ //
+ output wire q
+ );
+  //ram
    parameter memfile = "zephyr_hello.hex";
    parameter memsize = 8192;
    parameter reset_strategy = "MINI";
@@ -61,6 +71,8 @@ module servant
    wire [31:0] mdu_rd;
    wire        mdu_ready;
 
+    
+
    servant_arbiter arbiter
      (.i_wb_cpu_dbus_adr (wb_dmem_adr),
       .i_wb_cpu_dbus_dat (wb_dmem_dat),
@@ -112,21 +124,21 @@ module servant
       .o_wb_timer_cyc (wb_timer_cyc),
       .i_wb_timer_rdt (wb_timer_rdt));
 
-   servant_ram
-     #(.memfile (memfile),
-       .depth (memsize),
-       .RESET_STRATEGY (reset_strategy))
-   ram
-     (// Wishbone interface
-      .i_wb_clk (wb_clk),
-      .i_wb_rst (wb_rst),
-      .i_wb_adr (wb_mem_adr[$clog2(memsize)-1:2]),
-      .i_wb_cyc (wb_mem_cyc),
-      .i_wb_we  (wb_mem_we) ,
-      .i_wb_sel (wb_mem_sel),
-      .i_wb_dat (wb_mem_dat),
-      .o_wb_rdt (wb_mem_rdt),
-      .o_wb_ack (wb_mem_ack));
+   //servant_ram
+   //  #(.memfile (memfile),
+   //    .depth (memsize),
+   //    .RESET_STRATEGY (reset_strategy))
+   //ram
+   //  (// Wishbone interface
+   //   .i_wb_clk (wb_clk),
+   //   .i_wb_rst (wb_rst),
+   //   .i_wb_adr (wb_mem_adr[$clog2(memsize)-1:2]),
+   //   .i_wb_cyc (wb_mem_cyc),
+   //   .i_wb_we  (wb_mem_we) ,
+   //   .i_wb_sel (wb_mem_sel),
+   //   .i_wb_dat (wb_mem_dat),
+   //   .o_wb_rdt (wb_mem_rdt),
+   //   .o_wb_ack (wb_mem_ack));
 
    generate
       if (|with_csr) begin
@@ -231,4 +243,14 @@ module servant
     assign mdu_rd = 32'b0;
 `endif
 
+
+    //assign wb_clk = wb_clk;
+    //assign wb_rst = wb_rst;
+    assign i_wb_mem_adr = wb_mem_adr;
+    assign i_wb_mem_cyc = wb_mem_cyc;
+    assign i_wb_mem_we = wb_mem_we;
+    assign i_wb_mem_sel = wb_mem_sel;
+    assign i_wb_mem_dat = wb_mem_dat;
+    assign wb_mem_rdt = i_wb_mem_rdt;
+    assign wb_mem_ack = i_wb_mem_ack;
 endmodule

@@ -6,7 +6,7 @@ module uart_tx
     input tx_active,
     input wire [BITS-1:0] i_wb_dat,
     output tx_done,
-    output reg o_wb_rdt = 8'hff
+    output reg o_wb_rdt = 1
 );
 
 localparam  IDLE = 0;
@@ -21,7 +21,7 @@ reg [BITS-1:0] temp_data= 8'hff;
 
 reg[1:0] state = IDLE;
 reg[6:0] clock_count = 0;// >= clks_per_bit
-reg [2:0] data_index = 0;
+reg [3:0] data_index = 0;
 
 always @(posedge i_wb_clk) begin
     case (state)
@@ -62,7 +62,7 @@ always @(posedge i_wb_clk) begin
 
         TRANSMIT:
         begin
-            o_wb_rdt <= temp_data[data_index];// send bits for the byte
+            o_wb_rdt <= temp_data[data_index[2:0]];// send bits for the byte
             if (clock_count < clks_per_bit - 1) 
                 begin
                     clock_count <= clock_count + 1;
@@ -105,5 +105,5 @@ always @(posedge i_wb_clk) begin
             state <= IDLE;
     endcase
 end
-assign done = temp_done;
+assign tx_done = temp_done;
 endmodule

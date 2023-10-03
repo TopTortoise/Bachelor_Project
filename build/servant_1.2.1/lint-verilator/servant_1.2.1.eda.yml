@@ -56,25 +56,34 @@ files:
   name: src/serv_1.2.1/rtl/serv_compdec.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_clock_gen.v
+  name: src/servant_1.2.1/service/queue.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_timer.v
+  name: src/servant_1.2.1/service/servant_clock_gen.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_gpio.v
+  name: src/servant_1.2.1/service/servant_timer.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_arbiter.v
+  name: src/servant_1.2.1/service/servant_gpio.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_mux.v
+  name: src/servant_1.2.1/service/servant_arbiter.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant_ram.v
+  name: src/servant_1.2.1/service/servant_mux.v
 - core: ::servant:1.2.1
   file_type: verilogSource
-  name: src/servant_1.2.1/servant/servant.v
+  name: src/servant_1.2.1/service/uart_tx.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/service/uart_rx.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/service/servant_ram.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
+  name: src/servant_1.2.1/service/servant.v
 flow_options: {}
 hooks: {}
 name: servant_1.2.1

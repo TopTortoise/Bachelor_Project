@@ -26,6 +26,7 @@ filesets:
 
   soc:
     files:
+      - service/queue.v
       - service/servant_clock_gen.v
       - service/servant_timer.v
       - service/servant_gpio.v
@@ -41,6 +42,7 @@ filesets:
 
   verilator_tb:
     files:
+      - service/service.v
       - bench/servant_sim.v
       - "vidbo? (bench/servant_tb_vidbo.cpp)" : {file_type : cppSource}
       - "!vidbo? (bench/servant_tb.cpp)" : {file_type : cppSource}

@@ -3,7 +3,7 @@ module uart_rx
     parameter BITS = 8 )
 (
     input wire  i_wb_clk,
-    input wire  i_wb_rst,// not sure if reset is needed
+    //input wire  i_wb_rst,// not sure if reset is needed
     input wire  i_wb_dat,
     output wire rx_done,
     output wire rx_active,
@@ -26,7 +26,7 @@ reg [BITS-1:0] rx_byte = 0; // temp storage for data output
 reg  temp_done = 0;
 
 //states 
-reg [2:0] data_index =0;
+reg [3:0] data_index =0;
 reg [6:0] clock_count = 0;
 reg [1:0] state = IDLE;
 
@@ -62,7 +62,7 @@ always @(posedge i_wb_clk) begin
             begin
                 if(rx_bit == 1'b0) 
                     begin
-                        temp_active <= 2'b1;
+                        temp_active <= 1'b1;
                         clock_count <= 0; //reset counter
                         state <= RECEIVE; //go to recieve state
                         rx_byte <= 0;
@@ -90,7 +90,7 @@ always @(posedge i_wb_clk) begin
                 begin
                     clock_count <= 0;
 
-                    rx_byte[data_index] <= rx_bit;
+                    rx_byte[data_index[2:0]] <= rx_bit;
                     //check if all bist have been recieved
                     if(data_index < BITS-1)
                         begin

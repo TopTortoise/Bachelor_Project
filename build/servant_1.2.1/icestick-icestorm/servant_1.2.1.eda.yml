@@ -65,6 +65,9 @@ files:
   name: test.hex
 - core: ::servant:1.2.1
   file_type: verilogSource
+  name: src/servant_1.2.1/service/queue.v
+- core: ::servant:1.2.1
+  file_type: verilogSource
   name: src/servant_1.2.1/service/servant_clock_gen.v
 - core: ::servant:1.2.1
   file_type: verilogSource
