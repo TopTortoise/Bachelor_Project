@@ -117,6 +117,7 @@ module service
     .o_wb_rdt(to_pc)
   );
 
+<<<<<<< HEAD
   //queue queue (
   //   .i_wb_clk(i_clk),
   //   .i_wb_dat(from_ble),
@@ -129,6 +130,20 @@ module service
   //);
   //assign to_pc = i_data;
 
+=======
+  queue queue (
+     .i_wb_clk(i_clk),
+     .i_wb_dat(from_ble),
+     .i_wb_mem_cyc(wb_mem_cyc),
+     .i_wb_mem_we(wb_mem_we),
+     .i_rx_done(rx_done),
+     .i_wb_rst(wb_rst),
+     .o_wb_rdt(queue_dat)
+
+  );
+  //assign to_pc = i_data;
+
+>>>>>>> refs/remotes/origin/main
   reg [31:0] ble_data_adr = adr_LL;
 
   //united ram signals
@@ -139,8 +154,13 @@ module service
   wire [31:0] adr;
 
 
+<<<<<<< HEAD
   //wire [7:0] queue_dat;
   //wire write_queue;
+=======
+  wire [7:0] queue_dat;
+  wire write_queue;
+>>>>>>> refs/remotes/origin/main
 
   always @(posedge i_clk) begin
     if(wb_rst)begin
@@ -156,11 +176,18 @@ module service
     begin
     //for testing sending data to pc
     pc_active <= 0;
+<<<<<<< HEAD
     
     //if(rx_done)
     //  write_queue <= 1;
     //else if (!wb_mem_we&!wb_mem_cyc)
     //  write_queue <= 0;
+=======
+    if(rx_done)
+      write_queue <= 1;
+    else if (!wb_mem_we&!wb_mem_cyc)
+      write_queue <= 0;
+>>>>>>> refs/remotes/origin/main
     //
     case (wb_mem_adr)
       'h00A00000:// tx -> pc
@@ -179,7 +206,11 @@ module service
       tx_active <= 0;
     end
 
+<<<<<<< HEAD
    //keep adress in range
+=======
+   //keep address in range
+>>>>>>> refs/remotes/origin/main
     if(ble_data_adr>adr_UL) ble_data_adr <= adr_LL;
 
 
@@ -190,6 +221,7 @@ module service
     end
   end
 
+<<<<<<< HEAD
     assign  adr = rx_done? ble_data_adr   : wb_mem_adr;
     assign  cyc = rx_done? 1'b1     : wb_mem_cyc;
     assign  we  = rx_done? 1'b1     : wb_mem_we;
@@ -199,6 +231,15 @@ module service
    // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
 
     //assign q1 = 4'b0001;
+=======
+    assign  adr = !wb_mem_we&!wb_mem_cyc&write_queue? ble_data_adr   : wb_mem_adr;
+    assign  cyc = !wb_mem_we&!wb_mem_cyc&write_queue? 1'b1     : wb_mem_cyc;
+    assign  we  = !wb_mem_we&!wb_mem_cyc&write_queue? 1'b1     : wb_mem_we;
+    assign  sel = !wb_mem_we&!wb_mem_cyc&write_queue? 4'b1111  : wb_mem_sel;
+    assign  dat = !wb_mem_we&!wb_mem_cyc&write_queue? queue_dat : wb_mem_dat;
+   // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
+    assign q1 = 4'b0001;
+>>>>>>> refs/remotes/origin/main
   
 
 endmodule

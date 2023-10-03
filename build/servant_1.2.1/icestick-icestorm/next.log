@@ -7,10 +7,17 @@ Info: constrained 'to_pc' to bel 'X0/Y12/io0'
 Info: Packing constants..
 Info: Packing IOs..
 Info: Packing LUT-FFs..
+<<<<<<< HEAD
 Info:      694 LCs used as LUT4 only
 Info:      204 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
 Info:      152 LCs used as DFF only
+=======
+Info:      670 LCs used as LUT4 only
+Info:      193 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      153 LCs used as DFF only
+>>>>>>> refs/remotes/origin/main
 Info: Packing carries..
 Info:       62 LCs used as CARRY only
 Info: Packing RAMs..
@@ -19,6 +26,7 @@ Info:   constrained PLL 'clock_gen.pll.pll' to X6/Y0/pll_3
 Info: Packing special functions..
 Info: Packing PLLs..
 Info:   PLL 'clock_gen.pll.pll' has LOCK output, need to pass all outputs via LUT
+<<<<<<< HEAD
 Info:   constrained '$auto$simplemap.cc:420:simplemap_dff$2583_DFFLC' to X1/Y1/lc0
 Info: Promoting globals..
 Info: promoting i_clk$SB_IO_IN (fanout 384)
@@ -26,10 +34,20 @@ Info: promoting wb_rst [reset] (fanout 116)
 Info: promoting $abc$8566$auto$dff2dffe.cc:158:make_patterns_logic$6595 [cen] (fanout 32)
 Info: promoting $abc$8566$auto$dff2dffe.cc:158:make_patterns_logic$7441 [cen] (fanout 32)
 Info: promoting $abc$8566$auto$dff2dffe.cc:158:make_patterns_logic$7633 [cen] (fanout 31)
+=======
+Info:   constrained '$auto$simplemap.cc:420:simplemap_dff$4105_DFFLC' to X1/Y1/lc0
+Info: Promoting globals..
+Info: promoting i_clk$SB_IO_IN (fanout 374)
+Info: promoting wb_rst [reset] (fanout 116)
+Info: promoting $abc$9738$auto$dff2dffe.cc:158:make_patterns_logic$8623 [cen] (fanout 32)
+Info: promoting $abc$9738$auto$dff2dffe.cc:158:make_patterns_logic$7777 [cen] (fanout 32)
+Info: promoting $abc$9738$auto$dff2dffe.cc:158:make_patterns_logic$8815 [cen] (fanout 31)
+>>>>>>> refs/remotes/origin/main
 Info: promoting servant.cpu.cpu.bufreg_en [cen] (fanout 30)
 Info: promoting wb_clk (fanout 2)
 Info: Constraining chains...
 Info:       17 LCs used to legalise carry chains.
+<<<<<<< HEAD
 Info: Checksum: 0xa0e5dac1
 
 Info: Annotating ports with timing budgets for target frequency 32.00 MHz
@@ -39,10 +57,22 @@ Info: Device utilisation:
 Info: 	         ICESTORM_LC:  1131/ 1280    88%
 Info: 	        ICESTORM_RAM:    15/   16    93%
 Info: 	               SB_IO:     5/  112     4%
+=======
+Info: Checksum: 0x4ab85bc4
+
+Info: Annotating ports with timing budgets for target frequency 32.00 MHz
+Info: Checksum: 0xb77cc14c
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  1097/ 1280    85%
+Info: 	        ICESTORM_RAM:    15/   16    93%
+Info: 	               SB_IO:     9/  112     8%
+>>>>>>> refs/remotes/origin/main
 Info: 	               SB_GB:     7/    8    87%
 Info: 	        ICESTORM_PLL:     1/    1   100%
 Info: 	         SB_WARMBOOT:     0/    1     0%
 
+<<<<<<< HEAD
 Info: Placed 7 cells based on constraints.
 Info: Creating initial analytic placement for 1014 cells, random placement wirelen = 16021.
 Info:     at initial placer iter 0, wirelen = 213
@@ -391,5 +421,333 @@ Info: [ 27822,  28420) |****************+
 Info: [ 28420,  29018) |***********+
 Info: [ 29018,  29616) |**********+
 Info: [ 29616,  30214) |************************************+
+=======
+Info: Placed 11 cells based on constraints.
+Info: Creating initial analytic placement for 983 cells, random placement wirelen = 15268.
+Info:     at initial placer iter 0, wirelen = 250
+Info:     at initial placer iter 1, wirelen = 245
+Info:     at initial placer iter 2, wirelen = 247
+Info:     at initial placer iter 3, wirelen = 279
+Info: Running main analytical placer.
+Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 753, spread = 7042, legal = 7571; time = 0.02s
+Info:     at iteration #1, type SB_GB: wirelen solved = 7547, spread = 7594, legal = 7622; time = 0.00s
+Info:     at iteration #1, type ICESTORM_RAM: wirelen solved = 6028, spread = 7374, legal = 7381; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 242, spread = 7517, legal = 9216; time = 0.05s
+Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 3131, spread = 7119, legal = 7859; time = 0.02s
+Info:     at iteration #2, type SB_GB: wirelen solved = 7834, spread = 7853, legal = 7865; time = 0.00s
+Info:     at iteration #2, type ICESTORM_RAM: wirelen solved = 7402, spread = 7740, legal = 8545; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 291, spread = 6668, legal = 8054; time = 0.05s
+Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 3256, spread = 6149, legal = 6515; time = 0.02s
+Info:     at iteration #3, type SB_GB: wirelen solved = 6486, spread = 6524, legal = 6523; time = 0.00s
+Info:     at iteration #3, type ICESTORM_RAM: wirelen solved = 5809, spread = 6642, legal = 6889; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 325, spread = 6408, legal = 8177; time = 0.04s
+Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 3447, spread = 6318, legal = 6867; time = 0.03s
+Info:     at iteration #4, type SB_GB: wirelen solved = 6829, spread = 6844, legal = 6864; time = 0.01s
+Info:     at iteration #4, type ICESTORM_RAM: wirelen solved = 6139, spread = 6787, legal = 6888; time = 0.01s
+Info:     at iteration #4, type ALL: wirelen solved = 568, spread = 6589, legal = 8283; time = 0.06s
+Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 3281, spread = 6790, legal = 7147; time = 0.02s
+Info:     at iteration #5, type SB_GB: wirelen solved = 7112, spread = 7136, legal = 7154; time = 0.00s
+Info:     at iteration #5, type ICESTORM_RAM: wirelen solved = 6620, spread = 7307, legal = 7441; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 632, spread = 6499, legal = 8111; time = 0.03s
+Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 3493, spread = 6584, legal = 6995; time = 0.02s
+Info:     at iteration #6, type SB_GB: wirelen solved = 6961, spread = 6977, legal = 6981; time = 0.00s
+Info:     at iteration #6, type ICESTORM_RAM: wirelen solved = 6471, spread = 6962, legal = 6996; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 712, spread = 6516, legal = 7908; time = 0.03s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 3386, spread = 6347, legal = 6882; time = 0.02s
+Info:     at iteration #7, type SB_GB: wirelen solved = 6857, spread = 6884, legal = 6906; time = 0.00s
+Info:     at iteration #7, type ICESTORM_RAM: wirelen solved = 6196, spread = 6768, legal = 7130; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 740, spread = 6535, legal = 7887; time = 0.04s
+Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 3408, spread = 6153, legal = 6558; time = 0.02s
+Info:     at iteration #8, type SB_GB: wirelen solved = 6534, spread = 6555, legal = 6566; time = 0.00s
+Info:     at iteration #8, type ICESTORM_RAM: wirelen solved = 6137, spread = 6675, legal = 6902; time = 0.00s
+Info:     at iteration #8, type ALL: wirelen solved = 848, spread = 6424, legal = 8232; time = 0.06s
+Info:     at iteration #9, type ICESTORM_LC: wirelen solved = 3526, spread = 6076, legal = 6580; time = 0.01s
+Info:     at iteration #9, type SB_GB: wirelen solved = 6557, spread = 6587, legal = 6602; time = 0.00s
+Info:     at iteration #9, type ICESTORM_RAM: wirelen solved = 5834, spread = 6733, legal = 6965; time = 0.00s
+Info:     at iteration #9, type ALL: wirelen solved = 963, spread = 6196, legal = 7878; time = 0.04s
+Info:     at iteration #10, type ICESTORM_LC: wirelen solved = 3768, spread = 5931, legal = 6456; time = 0.02s
+Info:     at iteration #10, type SB_GB: wirelen solved = 6429, spread = 6457, legal = 6473; time = 0.00s
+Info:     at iteration #10, type ICESTORM_RAM: wirelen solved = 5438, spread = 6443, legal = 6622; time = 0.00s
+Info:     at iteration #10, type ALL: wirelen solved = 1053, spread = 6055, legal = 8046; time = 0.04s
+Info:     at iteration #11, type ICESTORM_LC: wirelen solved = 3653, spread = 5449, legal = 5996; time = 0.01s
+Info:     at iteration #11, type SB_GB: wirelen solved = 5953, spread = 5980, legal = 5995; time = 0.08s
+Info:     at iteration #11, type ICESTORM_RAM: wirelen solved = 5278, spread = 6215, legal = 6148; time = 0.00s
+Info:     at iteration #11, type ALL: wirelen solved = 1047, spread = 6187, legal = 7913; time = 0.04s
+Info:     at iteration #12, type ICESTORM_LC: wirelen solved = 3901, spread = 5994, legal = 6486; time = 0.02s
+Info:     at iteration #12, type SB_GB: wirelen solved = 6449, spread = 6475, legal = 6487; time = 0.00s
+Info:     at iteration #12, type ICESTORM_RAM: wirelen solved = 5430, spread = 6232, legal = 6809; time = 0.00s
+Info:     at iteration #12, type ALL: wirelen solved = 1261, spread = 6011, legal = 7347; time = 0.06s
+Info:     at iteration #13, type ICESTORM_LC: wirelen solved = 3885, spread = 5452, legal = 6024; time = 0.02s
+Info:     at iteration #13, type SB_GB: wirelen solved = 5989, spread = 6020, legal = 6033; time = 0.10s
+Info:     at iteration #13, type ICESTORM_RAM: wirelen solved = 5351, spread = 5955, legal = 6099; time = 0.00s
+Info:     at iteration #13, type ALL: wirelen solved = 1326, spread = 5925, legal = 7836; time = 0.07s
+Info:     at iteration #14, type ICESTORM_LC: wirelen solved = 3818, spread = 5708, legal = 6317; time = 0.02s
+Info:     at iteration #14, type SB_GB: wirelen solved = 6281, spread = 6318, legal = 6317; time = 0.00s
+Info:     at iteration #14, type ICESTORM_RAM: wirelen solved = 5377, spread = 6349, legal = 6690; time = 0.00s
+Info:     at iteration #14, type ALL: wirelen solved = 1358, spread = 6013, legal = 7243; time = 0.03s
+Info:     at iteration #15, type ICESTORM_LC: wirelen solved = 3848, spread = 5619, legal = 6202; time = 0.02s
+Info:     at iteration #15, type SB_GB: wirelen solved = 6171, spread = 6206, legal = 6214; time = 0.00s
+Info:     at iteration #15, type ICESTORM_RAM: wirelen solved = 5485, spread = 5944, legal = 6541; time = 0.00s
+Info:     at iteration #15, type ALL: wirelen solved = 1360, spread = 5943, legal = 7024; time = 0.03s
+Info:     at iteration #16, type ICESTORM_LC: wirelen solved = 3655, spread = 5335, legal = 5921; time = 0.02s
+Info:     at iteration #16, type SB_GB: wirelen solved = 5879, spread = 5924, legal = 5928; time = 0.00s
+Info:     at iteration #16, type ICESTORM_RAM: wirelen solved = 5274, spread = 5829, legal = 6299; time = 0.00s
+Info:     at iteration #16, type ALL: wirelen solved = 1523, spread = 5931, legal = 7555; time = 0.04s
+Info:     at iteration #17, type ICESTORM_LC: wirelen solved = 4039, spread = 5481, legal = 5900; time = 0.01s
+Info:     at iteration #17, type SB_GB: wirelen solved = 5868, spread = 5901, legal = 5915; time = 0.00s
+Info:     at iteration #17, type ICESTORM_RAM: wirelen solved = 4860, spread = 5477, legal = 5636; time = 0.00s
+Info:     at iteration #17, type ALL: wirelen solved = 1586, spread = 5884, legal = 7945; time = 0.04s
+Info:     at iteration #18, type ICESTORM_LC: wirelen solved = 4075, spread = 5501, legal = 6117; time = 0.01s
+Info:     at iteration #18, type SB_GB: wirelen solved = 6074, spread = 6111, legal = 6108; time = 0.00s
+Info:     at iteration #18, type ICESTORM_RAM: wirelen solved = 5312, spread = 6062, legal = 6546; time = 0.00s
+Info:     at iteration #18, type ALL: wirelen solved = 1647, spread = 5831, legal = 6611; time = 0.02s
+Info:     at iteration #19, type ICESTORM_LC: wirelen solved = 3834, spread = 5166, legal = 5741; time = 0.02s
+Info:     at iteration #19, type SB_GB: wirelen solved = 5710, spread = 5741, legal = 5758; time = 0.00s
+Info:     at iteration #19, type ICESTORM_RAM: wirelen solved = 5133, spread = 5497, legal = 6177; time = 0.00s
+Info:     at iteration #19, type ALL: wirelen solved = 1725, spread = 5777, legal = 7082; time = 0.02s
+Info:     at iteration #20, type ICESTORM_LC: wirelen solved = 4130, spread = 5500, legal = 6214; time = 0.02s
+Info:     at iteration #20, type SB_GB: wirelen solved = 6171, spread = 6206, legal = 6202; time = 0.00s
+Info:     at iteration #20, type ICESTORM_RAM: wirelen solved = 5167, spread = 5796, legal = 6606; time = 0.00s
+Info:     at iteration #20, type ALL: wirelen solved = 1898, spread = 5867, legal = 7329; time = 0.03s
+Info:     at iteration #21, type ICESTORM_LC: wirelen solved = 4259, spread = 5546, legal = 6140; time = 0.02s
+Info:     at iteration #21, type SB_GB: wirelen solved = 6113, spread = 6146, legal = 6141; time = 0.00s
+Info:     at iteration #21, type ICESTORM_RAM: wirelen solved = 5137, spread = 5931, legal = 6434; time = 0.00s
+Info:     at iteration #21, type ALL: wirelen solved = 1826, spread = 5811, legal = 7377; time = 0.03s
+Info:     at iteration #22, type ICESTORM_LC: wirelen solved = 4278, spread = 5448, legal = 6107; time = 0.02s
+Info:     at iteration #22, type SB_GB: wirelen solved = 6077, spread = 6103, legal = 6115; time = 0.00s
+Info:     at iteration #22, type ICESTORM_RAM: wirelen solved = 5171, spread = 6024, legal = 6485; time = 0.00s
+Info:     at iteration #22, type ALL: wirelen solved = 1904, spread = 5762, legal = 7314; time = 0.04s
+Info:     at iteration #23, type ICESTORM_LC: wirelen solved = 4296, spread = 5374, legal = 6022; time = 0.01s
+Info:     at iteration #23, type SB_GB: wirelen solved = 5986, spread = 6016, legal = 6013; time = 0.00s
+Info:     at iteration #23, type ICESTORM_RAM: wirelen solved = 5087, spread = 5970, legal = 6359; time = 0.00s
+Info:     at iteration #23, type ALL: wirelen solved = 1798, spread = 5854, legal = 7278; time = 0.03s
+Info: HeAP Placer Time: 1.75s
+Info:   of which solving equations: 0.91s
+Info:   of which spreading cells: 0.06s
+Info:   of which strict legalisation: 0.71s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 516, wirelen = 6611
+Info:   at iteration #5: temp = 0.000000, timing cost = 422, wirelen = 4765
+Info:   at iteration #10: temp = 0.000000, timing cost = 389, wirelen = 4474
+Info:   at iteration #15: temp = 0.000000, timing cost = 395, wirelen = 4334
+Info:   at iteration #20: temp = 0.000000, timing cost = 501, wirelen = 4241
+Info:   at iteration #22: temp = 0.000000, timing cost = 494, wirelen = 4231 
+Info: SA placement time 0.47s
+
+Info: Max frequency for clock 'i_clk$SB_IO_IN_$glb_clk': 83.93 MHz (PASS at 32.00 MHz)
+Info: Max frequency for clock         'wb_clk_$glb_clk': 626.57 MHz (PASS at 32.00 MHz)
+
+Info: Max delay <async>                         -> posedge i_clk$SB_IO_IN_$glb_clk: 1.06 ns
+Info: Max delay posedge i_clk$SB_IO_IN_$glb_clk -> <async>                        : 4.02 ns
+Info: Max delay posedge wb_clk_$glb_clk         -> posedge i_clk$SB_IO_IN_$glb_clk: 10.77 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 5 endpoint(s)
+Info:          + represents [1,5) endpoint(s)
+Info: [ 19335,  19878) |****************************************+
+Info: [ 19878,  20421) |*********+
+Info: [ 20421,  20964) |************************************************************ 
+Info: [ 20964,  21507) |***********************************************+
+Info: [ 21507,  22050) |*********************************************************+
+Info: [ 22050,  22593) |****************************************+
+Info: [ 22593,  23136) |*******************************************+
+Info: [ 23136,  23679) |*************+
+Info: [ 23679,  24222) |***********+
+Info: [ 24222,  24765) |************************+
+Info: [ 24765,  25308) |**********************+
+Info: [ 25308,  25851) |*****************+
+Info: [ 25851,  26394) |***************+
+Info: [ 26394,  26937) |*****+
+Info: [ 26937,  27480) |******+
+Info: [ 27480,  28023) |**********+
+Info: [ 28023,  28566) |****************+
+Info: [ 28566,  29109) |**************************+
+Info: [ 29109,  29652) |********+
+Info: [ 29652,  30195) |*******************************************+
+Info: Checksum: 0xcb58b711
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 3986 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       31        858 |   31   858 |      3028|       0.06       0.06|
+Info:       2000 |      180       1709 |  149   851 |      2248|       0.07       0.13|
+Info:       3000 |      330       2559 |  150   850 |      1456|       0.07       0.20|
+Info:       4000 |      521       3368 |  191   809 |       716|       0.08       0.27|
+Info:       5000 |      766       4123 |  245   755 |        74|       0.10       0.37|
+Info:       5126 |      806       4210 |   40    87 |         0|       0.02       0.40|
+Info: Routing complete.
+Info: Router1 time 0.40s
+Info: Checksum: 0x177c3e21
+
+Info: Critical path report for clock 'i_clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source $auto$simplemap.cc:420:simplemap_dff$4742_DFFLC.O
+Info:  0.6  1.1    Net servant.cpu.cpu.state.o_cnt_r[3] budget 3.027000 ns (2,14) -> (1,14)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9783_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:44
+Info:                  src/servant_1.2.1/service/servant.v:170
+Info:                  src/serv_1.2.1/rtl/serv_rf_top.v:140
+Info:                  src/serv_1.2.1/rtl/serv_top.v:223
+Info:                  src/serv_1.2.1/rtl/serv_state.v:63
+Info:  0.4  1.6  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9783_LC.O
+Info:  1.3  2.8    Net servant.cpu.cpu.cnt_en budget 3.027000 ns (1,14) -> (4,11)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9782_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:44
+Info:                  src/servant_1.2.1/service/servant.v:170
+Info:                  src/serv_1.2.1/rtl/serv_rf_top.v:140
+Info:                  src/serv_1.2.1/rtl/serv_top.v:223
+Info:                  src/serv_1.2.1/rtl/serv_state.v:13
+Info:  0.4  3.3  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9782_LC.O
+Info:  0.6  3.9    Net $abc$9738$techmap\servant.cpu.cpu.state.$and$src/serv_1.2.1/rtl/serv_state.v:99$760_Y_new_ budget 3.027000 ns (4,11) -> (4,11)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9781_LC.I1
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:44
+Info:                  src/servant_1.2.1/service/servant.v:170
+Info:                  src/serv_1.2.1/rtl/serv_rf_top.v:140
+Info:                  src/serv_1.2.1/rtl/serv_top.v:223
+Info:                  src/serv_1.2.1/rtl/serv_state.v:99
+Info:  0.4  4.3  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9781_LC.O
+Info:  0.6  4.9    Net $abc$9738$servant.servant_mux.i_wb_cpu_cyc_new_ budget 3.027000 ns (4,11) -> (5,10)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9780_LC.I1
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:44
+Info:                  src/servant_1.2.1/service/servant.v:98
+Info:                  src/servant_1.2.1/service/servant_mux.v:15
+Info:  0.4  5.3  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9780_LC.O
+Info:  1.3  6.5    Net $abc$9738$and$src/servant_1.2.1/service/service.v:155$106_Y_new_ budget 3.027000 ns (5,10) -> (5,7)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9779_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:155
+Info:  0.4  7.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9779_LC.O
+Info:  0.6  7.6    Net $abc$9738$and$src/servant_1.2.1/service/service.v:186$113_Y_new_ budget 3.027000 ns (5,7) -> (5,6)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9778_LC.I2
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:186
+Info:  0.4  8.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9778_LC.O
+Info:  0.6  8.5    Net $abc$9738$auto$simplemap.cc:250:simplemap_eqne$3114[0]_new_ budget 3.027000 ns (5,6) -> (6,6)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9777_LC.I0
+Info:  0.4  9.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9777_LC.O
+Info:  1.6 10.6    Net $abc$9738$auto$rtlil.cc:1874:Eq$1842 budget 3.029000 ns (6,6) -> (9,12)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9857_LC.I2
+Info:  0.4 11.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9857_LC.O
+Info:  2.0 13.0    Net $abc$9738$techmap$techmap2037\ram.mem.1.1.0.$reduce_or$/usr/bin/../share/yosys/ice40/brams_map.v:222$2017_Y budget 3.029000 ns (9,12) -> (10,13)
+Info:                Sink ram.mem.1.1.0_RAM.WCLKE
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/brams_map.v:222
+Info:  0.1 13.1  Setup ram.mem.1.1.0_RAM.WCLKE
+Info: 4.0 ns logic, 9.1 ns routing
+
+Info: Critical path report for clock 'wb_clk_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source $auto$simplemap.cc:420:simplemap_dff$4105_DFFLC.O
+Info:  0.6  1.1    Net clock_gen.pll.rst_reg[0] budget 30.242001 ns (1,1) -> (1,1)
+Info:                Sink $auto$simplemap.cc:420:simplemap_dff$4106_DFFLC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:38
+Info:                  src/servant_1.2.1/service/servant_clock_gen.v:12
+Info:                  src/servant_1.2.1/service/ice40_pll.v:12
+Info:  0.5  1.6  Setup $auto$simplemap.cc:420:simplemap_dff$4106_DFFLC.I0
+Info: 1.0 ns logic, 0.6 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge i_clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.0  0.0  Source i_data$sb_io.D_IN_0
+Info:  0.6  0.6    Net i_data$SB_IO_IN budget 30.782000 ns (13,4) -> (12,3)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$10412_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:78
+Info:                  src/servant_1.2.1/service/uart_rx.v:7
+Info:  0.5  1.1  Setup $abc$9738$auto$blifparse.cc:492:parse_blif$10412_LC.I0
+Info: 0.5 ns logic, 0.6 ns routing
+
+Info: Critical path report for cross-domain path 'posedge i_clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9765_LC.O
+Info:  2.0  2.6    Net $abc$9738$auto$ice40_ffinit.cc:141:execute$9460 budget 15.131000 ns (4,1) -> (2,10)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$10414_LC.I0
+Info:  0.4  3.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$10414_LC.O
+Info:  1.3  4.3    Net to_pc$SB_IO_OUT budget 15.131000 ns (2,10) -> (0,12)
+Info:                Sink to_pc$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:106
+Info:                  src/servant_1.2.1/service/uart_tx.v:9
+Info: 1.0 ns logic, 3.3 ns routing
+
+Info: Critical path report for cross-domain path 'posedge wb_clk_$glb_clk' -> 'posedge i_clk$SB_IO_IN_$glb_clk':
+Info: curr total
+Info:  0.5  0.5  Source $auto$simplemap.cc:420:simplemap_dff$4106_DFFLC.O
+Info:  1.3  1.9    Net clock_gen.pll.rst_reg[1] budget 3.458000 ns (1,1) -> (2,7)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9785_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:38
+Info:                  src/servant_1.2.1/service/servant_clock_gen.v:12
+Info:                  src/servant_1.2.1/service/ice40_pll.v:12
+Info:  0.4  2.3  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9785_LC.O
+Info:  1.3  3.6    Net $abc$9738$techmap\servant.arbiter.$logic_not$src/servant_1.2.1/service/servant_arbiter.v:36$294_Y_new_inv_ budget 4.016000 ns (2,7) -> (5,10)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9780_LC.I2
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:44
+Info:                  src/servant_1.2.1/service/servant.v:76
+Info:                  src/servant_1.2.1/service/servant_arbiter.v:36
+Info:  0.4  4.0  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9780_LC.O
+Info:  1.3  5.2    Net $abc$9738$and$src/servant_1.2.1/service/service.v:155$106_Y_new_ budget 3.027000 ns (5,10) -> (5,7)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9779_LC.I0
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:155
+Info:  0.4  5.7  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9779_LC.O
+Info:  0.6  6.3    Net $abc$9738$and$src/servant_1.2.1/service/service.v:186$113_Y_new_ budget 3.027000 ns (5,7) -> (5,6)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9778_LC.I2
+Info:                Defined in:
+Info:                  src/servant_1.2.1/service/service.v:186
+Info:  0.4  6.7  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9778_LC.O
+Info:  0.6  7.2    Net $abc$9738$auto$simplemap.cc:250:simplemap_eqne$3114[0]_new_ budget 3.027000 ns (5,6) -> (6,6)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9777_LC.I0
+Info:  0.4  7.7  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9777_LC.O
+Info:  1.6  9.3    Net $abc$9738$auto$rtlil.cc:1874:Eq$1842 budget 3.029000 ns (6,6) -> (9,12)
+Info:                Sink $abc$9738$auto$blifparse.cc:492:parse_blif$9857_LC.I2
+Info:  0.4  9.7  Source $abc$9738$auto$blifparse.cc:492:parse_blif$9857_LC.O
+Info:  2.0 11.7    Net $abc$9738$techmap$techmap2037\ram.mem.1.1.0.$reduce_or$/usr/bin/../share/yosys/ice40/brams_map.v:222$2017_Y budget 3.029000 ns (9,12) -> (10,13)
+Info:                Sink ram.mem.1.1.0_RAM.WCLKE
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/brams_map.v:222
+Info:  0.1 11.8  Setup ram.mem.1.1.0_RAM.WCLKE
+Info: 3.1 ns logic, 8.7 ns routing
+
+Info: Max frequency for clock 'i_clk$SB_IO_IN_$glb_clk': 76.29 MHz (PASS at 32.00 MHz)
+Info: Max frequency for clock         'wb_clk_$glb_clk': 626.57 MHz (PASS at 32.00 MHz)
+
+Info: Max delay <async>                         -> posedge i_clk$SB_IO_IN_$glb_clk: 1.06 ns
+Info: Max delay posedge i_clk$SB_IO_IN_$glb_clk -> <async>                        : 4.33 ns
+Info: Max delay posedge wb_clk_$glb_clk         -> posedge i_clk$SB_IO_IN_$glb_clk: 11.81 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 4 endpoint(s)
+Info:          + represents [1,4) endpoint(s)
+Info: [ 18142,  18745) |+
+Info: [ 18745,  19348) |**+
+Info: [ 19348,  19951) |*****************************************+
+Info: [ 19951,  20554) |***********************+
+Info: [ 20554,  21157) |*********************************************+
+Info: [ 21157,  21760) |************************************************************ 
+Info: [ 21760,  22363) |**********************************************+
+Info: [ 22363,  22966) |*********************************************************+
+Info: [ 22966,  23569) |************************************+
+Info: [ 23569,  24172) |*********************+
+Info: [ 24172,  24775) |*******+
+Info: [ 24775,  25378) |********************+
+Info: [ 25378,  25981) |************************+
+Info: [ 25981,  26584) |*********+
+Info: [ 26584,  27187) |*********************************************+
+Info: [ 27187,  27790) |*********+
+Info: [ 27790,  28393) |**********+
+Info: [ 28393,  28996) |***********************+
+Info: [ 28996,  29599) |****************+
+Info: [ 29599,  30202) |*********************************************+
+>>>>>>> refs/remotes/origin/main
 
 Info: Program finished normally.
