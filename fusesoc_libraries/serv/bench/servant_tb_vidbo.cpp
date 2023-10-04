@@ -131,6 +131,7 @@ int main(int argc, char **argv, char **env)
   top->wb_clk = 1;
   bool q = top->q;
   while (!(done || Verilated::gotFinish())) {
+    top->i_data = 1;
     if (tfp && !dump && (main_time > vcd_start)) {
       dump = true;
     }
