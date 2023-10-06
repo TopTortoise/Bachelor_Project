@@ -8,6 +8,7 @@
 using namespace std;
 
 static bool done;
+                          //NAME,RSSI\n
 
 vluint64_t main_time = 0; // Current simulation time
 // This is a 64-bit integer to reduce wrap over issues and
@@ -98,13 +99,45 @@ bool do_uart(uart_context_t *context, bool rx)
   }
   return false;
 }
+int state = 0;
+int last_update = 0;
+
+static int baud_t =208;
+bool send_uart(Vservant_sim *top,char ch){
+ if (state==0)//IDLE
+ {
+  top->i_data = 1;                  
+  last_update = main_time + baud_t;
+  state++;
+ }else if (state==1)
+ {
+  top->i_data = 0;
+  if(main_time > last_update)
+  {
+    last_update += baud_t;
+    state++;
+  }
+  else if (state < 10)
+   if(main_time)
+  {
+    /* code */
+  }
+  
+  /* code */
+ }
+ 
+
+ 
+}
 
 int main(int argc, char **argv, char **env)
 {
   int baud_rate = 0;
+  char* BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
 
   gpio_context_t gpio_context;
   uart_context_t uart_context;
+  uart_context_t uart_tx;
   Verilated::commandArgs(argc, argv);
 
   Vservant_sim *top = new Vservant_sim;
@@ -166,8 +199,11 @@ int main(int argc, char **argv, char **env)
       putchar(uart_context.ch);
       fflush(stdout);
     //  if (uart_context.ch != 0) printf("%c \n", uart_context.ch);
-    
     }
+    if(uart_context.ch==0x0d && *BLE_data != '\0') {
+     // if(send_uart(top, *BLE_data)) BLE_data++;
+      //printf("%c",*BLE_data);
+    }// printf("hello\n");
 
       //counter++;
     if (timeout && (main_time >= timeout))
