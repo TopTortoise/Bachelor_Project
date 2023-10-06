@@ -7,7 +7,7 @@ module servant_sim
    output wire to_pc,
    output wire q);
 
-   parameter memfile = "/project/fusesoc_libraries/serv/sw/simple_BLE.hex";
+   parameter memfile = "";
    parameter memsize = 8192;
    parameter with_csr = 1;
    parameter compressed = 0;

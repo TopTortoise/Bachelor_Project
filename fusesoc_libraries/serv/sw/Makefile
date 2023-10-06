@@ -1,11 +1,14 @@
-TOOLCHAIN_PREFIX=riscv64-unknown-elf-
+RISC=riscv64-unknown-elf
+P=python3
+FILE=simple_BLE
 
-%.elf: %.S link.ld
-	$(TOOLCHAIN_PREFIX)gcc -nostartfiles -nostdlib -march=rv32i -mabi=ilp32 -Tlink.ld -o$@ $<
-%.bin: %.elf
-	$(TOOLCHAIN_PREFIX)objcopy -O binary $< $@
-%.hex: %.bin
-	python3 makehex.py $< > $@
+all: run run_next build
 
-clean:
-	rm -f *.elf *.bin *.hex
+run:; $(RISC)-gcc $(FILE).S -nostartfiles -nostdlib -march=rv32i -mabi=ilp32 -Tlink.ld -o $(FILE)
+
+run_next:; $(RISC)-objcopy $(FILE) -O binary
+
+build:; $P makehex.py $(FILE) > $(FILE).hex
+
+clean:; rm $(FILE) $(FILE).hex
+	
