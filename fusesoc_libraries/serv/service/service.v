@@ -21,8 +21,8 @@ module service
    parameter [0:0] align = compress;
 
    parameter BITS = 8;
-   parameter adr_LL = 'h00C00000;//lower limit
-   parameter adr_UL = 'h00C10000;//upper limit
+   parameter adr_LL = 'h300;//lower limit allows 192 lines of code
+   parameter adr_UL = 'h1FFC;//upper limit also biggest possible address
    //ram
    wire [31:0]  wb_mem_adr;
    wire  wb_mem_cyc;
@@ -181,21 +181,20 @@ module service
     end
 
    //keep adress in range
-    if(ble_data_adr>adr_UL) ble_data_adr <= adr_LL;
+    //if(ble_data_adr>=adr_UL) ble_data_adr <= adr_LL;
 
 
 
 
-    ble_data_adr <= rx_done? ble_data_adr+4 : ble_data_adr;
+    ble_data_adr <= rx_done? ble_data_adr+4 : ble_data_adr>adr_UL? adr_LL : ble_data_adr;
 
     end
   end
-
-    assign  adr = rx_done? ble_data_adr           : wb_mem_adr;
-    assign  cyc = rx_done? 1'b1                   : wb_mem_cyc;
-    assign  we  = rx_done? 1'b1                   : wb_mem_we;
-    assign  sel = rx_done? 4'b1111                : wb_mem_sel;
-    assign  dat = rx_done? {{24{1'b0}},from_ble}  : wb_mem_dat;
+    assign  adr = rx_done&!(wb_mem_cyc)? ble_data_adr           : wb_mem_adr;
+    assign  cyc = rx_done&!(wb_mem_cyc)? 1'b1                   : wb_mem_cyc;
+    assign  we  = rx_done&!(wb_mem_cyc)? 1'b1                   : wb_mem_we;
+    assign  sel = rx_done&!(wb_mem_cyc)? 4'b1111                : wb_mem_sel;
+    assign  dat = rx_done&!(wb_mem_cyc)? {{24{1'b0}},from_ble}  : wb_mem_dat;
 
    // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
 

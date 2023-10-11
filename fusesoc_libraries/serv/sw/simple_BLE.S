@@ -9,11 +9,11 @@
 //#endif
 
 #ifndef DELAY
-#define DELAY 0x000680 /* delay that equals the duration of the UART */
+#define DELAY 0x0000680 /* delay that equals the duration of the UART */
 #endif
 
 #ifndef ADDR
-#define ADDR 0x00C00000 /* startign address of BLE data */
+#define ADDR 0x00000300 /* startign address of BLE data  0x00C00000000 does NOT wokr*/
 #endif
 
 
@@ -39,10 +39,11 @@
 
 start:
 _start:
+	addi t3, zero, '$'
 
 	li t5 , BLE
 	li a1, ADDR
-    addi a2,zero,256 #how many characters should be printed
+    addi a2,zero,2 #how many characters should be printed
 
 
 
@@ -71,11 +72,14 @@ _start:
 	addi t3, zero, 'F'
 	sb t3, 0(t2)
 	jal delay  # jump to delay and save position to ra
+	nop
+	li t1, 0x000F000
 	//
 	//
 	addi t3, zero, 0x0d #enter 
 	sw t3, 0(t2)
 	jal delay  # jump to delay and save pos
+	li t1, 0x0000680
 	
 
 
@@ -95,7 +99,7 @@ _start:
 ending:	
 
 	addi t3, zero, 'z' # t3 = zero + 'P'
-	sw t3, 0(t5) #
+	sw t3, 0(t2) #
 	jal delay  # jump to delay and save positio
 
 j end

@@ -1,0 +1,56 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Wed Oct 11 11:57:11 2023
+[*]
+[dumpfile] "/home/paulblume/jku/BA/ba_projekt/build/servant_1.2.1/verilator_tb-verilator/trace.vcd"
+[dumpfile_mtime] "Wed Oct 11 11:53:21 2023"
+[dumpfile_size] 2232480066
+[savefile] "/home/paulblume/jku/BA/ba_projekt/ram.gtkw"
+[timestart] 1075
+[size] 1080 1223
+[pos] -27 -24
+*-0.892282 1076 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.servant_sim.
+[treeopen] TOP.servant_sim.dut.
+[treeopen] TOP.servant_sim.dut.servant.
+[treeopen] TOP.servant_sim.dut.servant.cpu.
+[treeopen] TOP.servant_sim.dut.servant.cpu.cpu.
+[treeopen] TOP.servant_sim.dut.servant.cpu.cpu.decode.
+[treeopen] TOP.servant_sim.dut.servant.cpu.cpu.rf_if.
+[treeopen] TOP.servant_sim.dut.servant.cpu.cpu.state.
+[sst_width] 273
+[signals_width] 206
+[sst_expanded] 1
+[sst_vpaned_height] 374
+@28
+TOP.servant_sim.wb_clk
+TOP.i_data
+TOP.o_data
+@820
+TOP.servant_sim.dut.from_ble[7:0]
+@22
++{TOP.servant_sim.dut.rx_from_ble.rx_data_index[3:0]} TOP.servant_sim.dut.rx_from_ble.data_index[3:0]
+@820
+TOP.servant_sim.dut.data_to_ble[7:0]
+@22
+TOP.servant_sim.dut.ble_data_adr[31:0]
+@28
+TOP.servant_sim.dut.rx_from_ble.rx_done
+@820
+TOP.servant_sim.dut.dat[31:0]
+@22
+TOP.servant_sim.dut.wb_mem_dat[31:0]
+[color] 3
+TOP.servant_sim.dut.ram.o_wb_rdt[31:0]
+@24
+TOP.servant_sim.dut.adr[31:0]
+@22
+TOP.servant_sim.dut.wb_mem_adr[31:0]
+TOP.servant_sim.counter[5:0]
+@28
+TOP.wb_rst
+TOP.servant_sim.dut.tx_done
+TOP.servant_sim.dut.tx_active
+[pattern_trace] 1
+[pattern_trace] 0

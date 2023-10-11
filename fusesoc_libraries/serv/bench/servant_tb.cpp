@@ -125,7 +125,7 @@ bool send_uart(Vservant_sim *top, char ch)
     top->i_data = (ch >> state - 2) & 0x01;
     if (main_time > last_update)
     {
-      printf("\n%d", top->i_data);
+      //printf("\n%d", top->i_data);
       last_update += baud_t;
       state++;
     }
@@ -146,7 +146,7 @@ bool send_uart(Vservant_sim *top, char ch)
 int main(int argc, char **argv, char **env)
 {
   int baud_rate = 0;
-  char *BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
+  char *BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2";//\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
 
   gpio_context_t gpio_context;
   uart_context_t uart_context;
@@ -214,7 +214,7 @@ int main(int argc, char **argv, char **env)
       fflush(stdout);
       //  if (uart_context.ch != 0) printf("%c \n", uart_context.ch);
     }
-    if (uart_context.ch == 0x0d && *BLE_data != '\0'  && rx_done)
+    if (uart_context.ch == 'F' && *BLE_data != '\0'  && rx_done)
     {
 
       if (send_uart(top, *BLE_data))

@@ -19,6 +19,11 @@ module servant_sim
 	$display("Loading RAM from %0s", firmware_file);
 	$readmemh(firmware_file, dut.ram.mem);
   end
+  reg [5:0] counter = 0;
+  always @(posedge wb_clk ) begin
+    counter <= counter +1;
+    if(counter == 32) counter <= 0;
+  end
 
    service
      #(.memfile  (memfile),
