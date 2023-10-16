@@ -146,7 +146,7 @@ bool send_uart(Vservant_sim *top, char ch)
 int main(int argc, char **argv, char **env)
 {
   int baud_rate = 0;
-  char *BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2";//\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
+  char *BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
 
   gpio_context_t gpio_context;
   uart_context_t uart_context;

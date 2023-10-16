@@ -1,0 +1,12 @@
+RISC=riscv64-unknown-elf
+P=python3
+FILE=main
+
+all: run_next build
+
+run_next:; $(RISC)-objcopy $(FILE) -O binary
+
+build:; $P makehex.py $(FILE) > $(FILE).hex
+
+clean:; rm $(FILE) $(FILE).hex
+	

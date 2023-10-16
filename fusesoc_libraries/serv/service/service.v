@@ -3,7 +3,7 @@ module service
 (
  input wire  i_clk,
  output wire q,
- //output wire[3:0] q1,
+ output wire[3:0] q1,
  
  //uart
  output wire to_pc,
@@ -21,7 +21,7 @@ module service
    parameter [0:0] align = compress;
 
    parameter BITS = 8;
-   parameter adr_LL = 'h300;//lower limit allows 192 lines of code
+   parameter adr_LL = 'h300;//lower limit allows 192 instructions
    parameter adr_UL = 'h1FFC;//upper limit also biggest possible address
    //ram
    wire [31:0]  wb_mem_adr;
@@ -146,6 +146,7 @@ module service
     if(wb_rst)begin
       pc_active <= 0;
       tx_active <= 0;
+      ble_data_adr <= adr_LL;
       //adr <=  wb_mem_adr;
       //cyc <=  wb_mem_cyc ;
       //we  <=  wb_mem_we ;
@@ -166,13 +167,17 @@ module service
     case (wb_mem_adr)
       'h00A00000:// tx -> pc
       begin
-        data_to <= wb_mem_rdt[7:0];
-        pc_active <= 1;
+        if (wb_mem_cyc) begin
+          data_to <= wb_mem_rdt[7:0];
+          pc_active <= 1;
+        end
       end
       'h00F00000:// tx -> BLE
       begin
-        data_to_ble <= wb_mem_rdt[7:0];
-        tx_active <= 1;
+        if (wb_mem_cyc) begin
+          data_to_ble <= wb_mem_rdt[7:0];
+          tx_active <= 1;
+        end
       end
     endcase
 
@@ -190,15 +195,15 @@ module service
 
     end
   end
-    assign  adr = rx_done&!(wb_mem_cyc)? ble_data_adr           : wb_mem_adr;
-    assign  cyc = rx_done&!(wb_mem_cyc)? 1'b1                   : wb_mem_cyc;
-    assign  we  = rx_done&!(wb_mem_cyc)? 1'b1                   : wb_mem_we;
-    assign  sel = rx_done&!(wb_mem_cyc)? 4'b1111                : wb_mem_sel;
-    assign  dat = rx_done&!(wb_mem_cyc)? {{24{1'b0}},from_ble}  : wb_mem_dat;
+    assign  adr = rx_done? ble_data_adr           : wb_mem_adr;
+    assign  cyc = rx_done? 1'b1                   : wb_mem_cyc;
+    assign  we  = rx_done? 1'b1                   : wb_mem_we;
+    assign  sel = rx_done? 4'b1111                : wb_mem_sel;
+    assign  dat = rx_done? {{24{1'b0}},from_ble}  : wb_mem_dat;
 
    // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
 
-    //assign q1 = 4'b0001;
+    assign q1 = 4'b0101;
   
 
 endmodule

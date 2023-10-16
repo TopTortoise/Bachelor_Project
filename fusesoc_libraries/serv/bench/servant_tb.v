@@ -7,7 +7,7 @@ module servant_tb;
 
    reg wb_clk = 1'b0;
    reg wb_rst = 1'b1;
-
+   wire [3:0] q1;
    wire q;
 
    always  #31 wb_clk <= !wb_clk;
@@ -21,6 +21,6 @@ module servant_tb;
      #(.memfile  (memfile),
        .memsize  (memsize),
        .with_csr (with_csr))
-   dut(wb_clk, wb_rst, q);
+   dut(wb_clk, wb_rst, q, q1);
 
 endmodule

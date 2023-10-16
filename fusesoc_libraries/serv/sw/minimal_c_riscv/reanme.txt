@@ -1,0 +1,9 @@
+all : main.c
+	riscv32-unknown-elf-gcc -o main bootstrap.S main.c -march=rv32i -mabi=ilp32 -nostartfiles -Wl,--no-relax -T link.ld
+	elf2hex --bit-width 32 --input main --output main.hex
+
+dump-code: all
+	riscv32-unknown-elf-objdump -dj .text -M no-aliases main
+
+clean:
+	rm -f main main.o main.hex

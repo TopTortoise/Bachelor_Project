@@ -1,4 +1,4 @@
-RISC=riscv64-unknown-elf
+RISC=riscv32-unknown-elf
 P=python3
 FILE=simple_BLE
 

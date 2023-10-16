@@ -30,4 +30,8 @@ all relevant files for the project are in the
 [service directory](https://github.com/TopTortoise/Bachelor_Project/tree/main/fusesoc_libraries/serv/service).
 
 
+# TODO
+
+make saving data from the BLE more memory efficient
+
 

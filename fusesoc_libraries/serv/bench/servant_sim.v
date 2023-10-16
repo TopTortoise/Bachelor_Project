@@ -5,7 +5,9 @@ module servant_sim
    input wire i_data,
    output wire o_data,
    output wire to_pc,
-   output wire q);
+   output wire q,
+   output wire [3:0] q1
+   );
 
    parameter memfile = "";
    parameter memsize = 8192;
@@ -32,6 +34,6 @@ module servant_sim
        .with_csr (with_csr),
        .compress (compressed[0:0]),
        .align    (align[0:0]))
-   dut(wb_clk, q, to_pc, i_data, o_data);
+   dut(wb_clk, q, q1, to_pc, i_data, o_data);
 
 endmodule
