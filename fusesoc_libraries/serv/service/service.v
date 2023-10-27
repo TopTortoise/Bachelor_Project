@@ -21,7 +21,7 @@ module service
    parameter [0:0] align = compress;
 
    parameter BITS = 8;
-   parameter adr_LL = 'h300;//lower limit allows 192 instructions
+   parameter adr_LL = 'h800;//lower limit allows 192 instructions
    parameter adr_UL = 'h1FFC;//upper limit also biggest possible address
    //ram
    wire [31:0]  wb_mem_adr;
@@ -138,6 +138,8 @@ module service
   wire [31:0] dat;
   wire [31:0] adr;
 
+  reg [3:0] ble_sel = 1;
+
 
   //wire [7:0] queue_dat;
   //wire write_queue;
@@ -147,54 +149,41 @@ module service
       pc_active <= 0;
       tx_active <= 0;
       ble_data_adr <= adr_LL;
-      //adr <=  wb_mem_adr;
-      //cyc <=  wb_mem_cyc ;
-      //we  <=  wb_mem_we ;
-      //sel <=  wb_mem_sel ;
-      //dat <=  wb_mem_dat ;
     end
     else
     begin
-    //for testing sending data to pc
-    
-    pc_active <= 0;
-    
-    //if(rx_done)
-    //  write_queue <= 1;
-    //else if (!wb_mem_we&!wb_mem_cyc)
-    //  write_queue <= 0;
-    //
     case (wb_mem_adr)
       'h00A00000:// tx -> pc
-      begin
-        if (wb_mem_cyc) begin
-          data_to <= wb_mem_rdt[7:0];
-          pc_active <= 1;
+        begin
+          if (wb_mem_cyc) begin
+            data_to <= wb_mem_rdt[7:0];
+            pc_active <= 1;
+          end
         end
-      end
       'h00F00000:// tx -> BLE
-      begin
-        if (wb_mem_cyc) begin
-          data_to_ble <= wb_mem_rdt[7:0];
-          tx_active <= 1;
+        begin
+          if (wb_mem_cyc) begin
+            data_to <= wb_mem_rdt[7:0];
+            pc_active <= 1;
+            data_to_ble <= wb_mem_rdt[7:0];
+            tx_active <= 1;
+          end
         end
-      end
+      default:
+        begin
+          tx_active <= 0;
+          pc_active <= 0;
+        end
     endcase
 
-    if (tx_active) begin
-      tx_active <= 0;
-    end
 
    //keep adress in range
-    //if(ble_data_adr>=adr_UL) ble_data_adr <= adr_LL;
-
-
-
-
     ble_data_adr <= rx_done? ble_data_adr+4 : ble_data_adr>adr_UL? adr_LL : ble_data_adr;
-
+    //ble_sel      <= rx_done?ble_sel+ble_sel:ble_sel==0?1:ble_sel;
+ 
     end
   end
+  
     assign  adr = rx_done? ble_data_adr           : wb_mem_adr;
     assign  cyc = rx_done? 1'b1                   : wb_mem_cyc;
     assign  we  = rx_done? 1'b1                   : wb_mem_we;

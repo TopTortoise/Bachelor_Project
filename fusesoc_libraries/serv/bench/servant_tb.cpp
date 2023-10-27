@@ -146,7 +146,7 @@ bool send_uart(Vservant_sim *top, char ch)
 int main(int argc, char **argv, char **env)
 {
   int baud_rate = 0;
-  char *BLE_data = "CMD>\nScanning BLE1,1\nBLE2,2\nBLE4,4\nBLE8,9\nBLE1,8\nBLE,0\0";
+  char *BLE_data = "CMD>\nScanning \%Zab,1,,,C9\%\%Y,1,,,C2\%\%X,1,,,CF\%\1\0";
 
   gpio_context_t gpio_context;
   uart_context_t uart_context;
@@ -210,15 +210,20 @@ int main(int argc, char **argv, char **env)
     if (do_uart(&uart_context, top->o_data))
     {
       rx_done = true;
-      putchar(uart_context.ch);
+      //putchar(uart_context.ch);
+      printf("%d -> ", (int)uart_context.ch);
+      printf("%c \n", uart_context.ch);
       fflush(stdout);
       //  if (uart_context.ch != 0) printf("%c \n", uart_context.ch);
     }
     if (uart_context.ch == 'F' && *BLE_data != '\0'  && rx_done)
     {
+      
+      if(*BLE_data == '\1') BLE_data++;
 
-      if (send_uart(top, *BLE_data))
-        BLE_data++;
+      if (send_uart(top, *BLE_data)){
+         BLE_data++;
+      }
       // printf("%c",*BLE_data);
     } // printf("hello\n");
 

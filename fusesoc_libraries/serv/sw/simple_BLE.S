@@ -14,7 +14,7 @@
 
 
 #ifndef SCAN_DELAY
-#define SCAN_DELAY 0x000F00 /* delay for the scanning B71B00 = to about 1 second delay */
+#define SCAN_DELAY 0xB71B00 /* delay for the scanning B71B00 = to about 1 second delay */
 #endif
 
 #ifndef ADDR_OF_DATA
@@ -137,11 +137,11 @@ delay:
 read:
 	addi s3, zero, 'R' # s3 = zero + 'P'
 	sw s3, 0(s5) #
-	jal delay  # jum--imap spchex,tabhex,crhex,lfhexp to delay and save positio
+	jal delay  # jump to delay and save positio
 	addi s3, zero, '\n' # s3 = zero + 'P'
 	sw s3, 0(s5) #
-reader:
 	jal delay  # jump to delay and save positio
+reader:
 	lw a1,0(s4)
 	sw a1,0(s5)
 	jal delay

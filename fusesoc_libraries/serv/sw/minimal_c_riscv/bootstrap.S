@@ -2,7 +2,7 @@
 .globl main
 
 _start:
-	//li sp, 2000
+	li sp, 4000
 	jal main
 exit:
 	j exit

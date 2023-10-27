@@ -1,74 +1,209 @@
-//#pragma gcc push_options
-//#pragma gcc GCC optimize ("Os")
-
-static volatile char * const UART_PC = (char * const)0x00A00000; //pc_uart 
-static volatile char * const UART_TX = (char * const)0x00F00000; // tx_uart
-static volatile char * const ADR_LL = (char * const)0x300; // lowest address for ble data
-static volatile char * const ADR_UL = (char * const)0x1FFC; // highest address for ble data
-
-////uart delay
-//const int DELAY_T = 0x0680;
-//
-////command ending
-//const int CR = 0x0d;
-////commands
-//const char CMD = '$';
-//const char END = '-';
-//const char SCAN = 'F';
-//const char END_SCAN = 'X';
-//
-////scanning parameters
-//const int  SCAN_INTERVAL = 0x001;
-//const int  SCAN_WINDOW = 0x001;
-//const int SCAN_DELAY = 120000;//12 million == ca. 1 second delay
+#include "stdint.h"
+#include "fixed_floating.h"
+static volatile int * const UART_BLE = (int * const)0x00F00000; // hier die adresse von deinem uart
+static volatile int * const UART_PC  = (int * const)0x00F00000; // hier die adresse von deinem uart
+static volatile int * DATA  = (int *)0x00000800; // hier die adresse von deinem uart
 
 
+const int MEASURED_POWER = -57;//calculated with 50 differen obsverations of my phone
+const int N = 2;
 
-void delay();
+
+//COMANDS BLE
+const char CMD = '$';
+const char SCAN = 'F';
+const char STOP = 'X';
+const char END = '-';
+const char SEND = 0x0d;
+
+//DELAYS
+const int DELAY_T = 0x08A8;
+const unsigned int SCAN_DELAY_T = 0xB71B;
+
+
+void delay(int delay_t);
+unsigned char Hex_to_int(char byte);
+void analyze();
 void read();
 
 int main() {
 
-    *UART_PC = '$'; // send $
-    delay();
-    *UART_PC = '$'; // send $
-    delay();
-    *UART_PC = '$'; // send $
-    delay();
+  while (1) {
+    //$$$
+    *UART_BLE = CMD; 
+    delay(DELAY_T);
+    *UART_BLE = CMD; 
+    delay(DELAY_T);
+    *UART_BLE = CMD; 
+    delay(DELAY_T);
+    *UART_BLE = SEND;
+    delay(DELAY_T);
+    //F
+    *UART_BLE = SCAN; 
+    delay(DELAY_T);
+    *UART_BLE = SEND;
+    delay(SCAN_DELAY_T);
+    
+    //X
+    *UART_BLE = STOP; 
+    delay(DELAY_T);
+    *UART_BLE = SEND;
+    delay(DELAY_T);
 
+
+    //---
+    *UART_BLE = END; 
+    delay(DELAY_T);
+    *UART_BLE = END; 
+    delay(DELAY_T);
+    *UART_BLE = END; 
+    delay(DELAY_T);
+    *UART_BLE = SEND;
+    delay(DELAY_T);
+
+    *UART_PC = '\n';
+    delay(DELAY_T);
+
+    *UART_PC = 'R';
+    delay(DELAY_T);
+    //read();
+    analyze();
     read();
-    //*UART_TX = CR; // send "enter"
-    //delay(DELAY_T);
-    //*UART_TX = SCAN; // send F
-    //delay(DELAY_T);
-    //*UART_TX = CR; // send F
-    //delay(DELAY_T);//scan delay
-    //*UART_TX = END_SCAN; // send X
-    //delay(DELAY_T);//scan delay
-    //*UART_TX = CR; // send "enter"
-    //delay(DELAY_T);//scan delay
-//    read();
-//    *UART_TX = 'z'; // send "enter"
-//    delay(DELAY_T);//scan delay
 
-
-
-    return 0;
-
-}
-
-void read(){
-  volatile char * data = ADR_LL;
+    *UART_PC = 'D';
+    delay(DELAY_T);
+    while(1);
   
-  while(*data != 0){
-
-      *UART_PC = *data;
-      data+=4;
   }
+    
+  return 0;
 }
-//#pragma gcc pop_options
 
-void delay(){
-  for (int i = 0; i < 0x680; i++);
-
+/**
+ * reads all the data of RAM from address 0x7E8 until a 0 byte is found
+*/
+void /* __attribute__((optimize("Os"))) */ read(){
+  char c;
+  while ((c = *DATA), c!='\0')
+  {
+    *UART_PC = c;
+    delay(DELAY_T);
+    DATA += 1;
   }
+  DATA = (int *)0x800;
+}
+/**
+ * analyze:
+ * calculates the distance from BLE module and rewrites the data in an easier processable format:calculate_distance
+ * %<ADDRESS,RSSI,DISTANCE>%
+ * 
+ * input: %ADDRESS,TYPE,,,RSSI% or %ADDRESS,TYPE,RSSI,,%
+*/
+void analyze(){
+  int16_t distance = 0;
+  int16_t rssi = 0;
+
+  volatile int * free = DATA;
+  volatile int * la = DATA;
+  char c;
+  //while (*DATA != '%')
+  //{
+  //  DATA++;
+  //}
+  //free = DATA;
+  while (*DATA != 0)
+  {
+
+    while((c= *DATA),c != '%'){
+        *free = c;
+        free++;
+        DATA++;
+    }//read until %
+    *free = '%';//write %
+    free++;
+    DATA++;//read %
+
+    while ((c= *DATA),c!= ',')//read address
+    {
+      *free = c;
+      free++;
+      DATA++;
+    }
+
+    *free = ',';//write ,
+    free++;
+    DATA++;//read ,
+
+    free = free == (int *)la? DATA : free;//set free to Data to overwrite addresstype
+    //free++;
+    DATA++;//read TYPE (*useless line can be deleted later*)
+
+    //go to end of the message
+    la = DATA+2;
+    while (*la!='%')
+    {
+      DATA++;
+      la++;
+    }
+    //la == % and DATA == first value of RSSI
+    //%ADDRESS,TYPE,,,C4      %
+    //         ^free  ^DATA   ^la
+
+    *free = *DATA;//write first value of RSSI
+    rssi = (Hex_to_int(*DATA)*16);
+    DATA++;
+    free++;
+    *free = *DATA;//write second value of RSSI
+    rssi += Hex_to_int(*DATA);
+
+    
+    free++;
+    *free = ',';
+    free++;
+    //distance = (20th root of 10)^((MEASURED_POWER-rssi))
+    int power =pow_point(BASE,(int8_t)(MEASURED_POWER-rssi));
+    *free = (int8_t)(power>>8);
+    free++;
+    *free = (int8_t)(power);
+    free++;
+    *free = '%';
+    free++;
+
+    /* *UART_PC = 'P';
+    delay(DELAY_T);
+
+    *UART_PC = power>>8;
+    delay(DELAY_T);
+    *UART_PC = power;
+    delay(DELAY_T); */
+
+    DATA = la;//set data to %
+
+    DATA++;//read last %
+    rssi = 0;
+    
+  }
+  //while (*free != '\0')
+  //{
+  //  *free = '\0';
+  //  free++;
+  //}
+  
+    DATA = (int *)0x800;
+}
+
+unsigned char __attribute__((optimize("Os"))) Hex_to_int(char byte){
+  unsigned char value = 0;
+  if (byte >= '0' && byte <= '9') value = byte - '0';
+  else if (byte >= 'a' && byte <='f') value = byte - 'a' + 10;
+  else if (byte >= 'A' && byte <='F') value = byte - 'A' + 10;  
+  return value;
+
+}
+
+/**
+* creates an delay so that the UART can send the data
+*/
+void delay(int delay_t){
+  for (unsigned int i = 0; i < delay_t; i++) ;
+}
