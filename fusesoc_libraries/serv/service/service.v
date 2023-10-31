@@ -20,8 +20,8 @@ module service
    parameter [0:0] compress = 0;
    parameter [0:0] align = compress;
 
-   parameter BITS = 8;
-   parameter adr_LL = 'h800;//lower limit allows 192 instructions
+   parameter BITS = 8;  
+   parameter adr_LL = 'h730;//lower limit allows 192 instructions
    parameter adr_UL = 'h1FFC;//upper limit also biggest possible address
    //ram
    wire [31:0]  wb_mem_adr;
@@ -163,9 +163,9 @@ module service
       'h00F00000:// tx -> BLE
         begin
           if (wb_mem_cyc) begin
-            data_to <= wb_mem_rdt[7:0];
-            pc_active <= 1;
-            data_to_ble <= wb_mem_rdt[7:0];
+            //data_to <= wb_mem_dat[7:0];
+            //pc_active <= 1;
+            data_to_ble <= wb_mem_dat[7:0];
             tx_active <= 1;
           end
         end
@@ -177,7 +177,7 @@ module service
     endcase
 
 
-   //keep adress in range
+    //keep adress in range
     ble_data_adr <= rx_done? ble_data_adr+4 : ble_data_adr>adr_UL? adr_LL : ble_data_adr;
     //ble_sel      <= rx_done?ble_sel+ble_sel:ble_sel==0?1:ble_sel;
  
@@ -192,7 +192,7 @@ module service
 
    // assign  write_queue = rx_done|!wb_mem_we&!wb_mem_cyc?
 
-    assign q1 = 4'b0101;
+    assign q1 = 4'b1101;
   
 
 endmodule

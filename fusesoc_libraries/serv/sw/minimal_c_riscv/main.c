@@ -1,12 +1,13 @@
 #include "stdint.h"
-#include "fixed_floating.h"
+#include "fixed_point.h"
+#define data_adr (0x730)
 static volatile int * const UART_BLE = (int * const)0x00F00000; // hier die adresse von deinem uart
-static volatile int * const UART_PC  = (int * const)0x00F00000; // hier die adresse von deinem uart
-static volatile int * DATA  = (int *)0x00000800; // hier die adresse von deinem uart
+static volatile int * const UART_PC  = (int * const)0x00A00000; // hier die adresse von deinem uart
+static volatile int * DATA  = (int *)0x730; // hier die adresse von deinem uart
 
 
-const int MEASURED_POWER = -57;//calculated with 50 differen obsverations of my phone
-const int N = 2;
+const int8_t MEASURED_POWER = -57;//calculated with 50 differen obsverations of my phone
+const int N = 2;//environmental constant
 
 
 //COMANDS BLE
@@ -17,18 +18,19 @@ const char END = '-';
 const char SEND = 0x0d;
 
 //DELAYS
-const int DELAY_T = 0x08A8;
-const unsigned int SCAN_DELAY_T = 0xB71B;
+const int DELAY_T = 0x08A8;//0x01A8
+const unsigned int SCAN_DELAY_T = 0xB71B00;
 
 
 void delay(int delay_t);
 unsigned char Hex_to_int(char byte);
 void analyze();
 void read();
-
+#pragma GCC push_options
+#pragma GCC optimize ("Os")
 int main() {
 
-  while (1) {
+ // while (1) {
     //$$$
     *UART_BLE = CMD; 
     delay(DELAY_T);
@@ -64,17 +66,29 @@ int main() {
     *UART_PC = '\n';
     delay(DELAY_T);
 
+
     *UART_PC = 'R';
-    delay(DELAY_T);
-    //read();
+    delay(DELAY_T); 
+    read();
+    *UART_PC = '\n';
+    delay(DELAY_T); 
+    *UART_PC = 'A';
+    delay(DELAY_T); 
     analyze();
+    *UART_PC = '\n';
+    delay(DELAY_T); 
+    *UART_PC = 'R';
+    delay(DELAY_T); 
     read();
 
+    *UART_PC = '\n';
+    delay(DELAY_T);
     *UART_PC = 'D';
     delay(DELAY_T);
+
     while(1);
   
-  }
+  //}
     
   return 0;
 }
@@ -88,16 +102,16 @@ void /* __attribute__((optimize("Os"))) */ read(){
   {
     *UART_PC = c;
     delay(DELAY_T);
-    DATA += 1;
+    DATA++;
   }
-  DATA = (int *)0x800;
+  DATA = (int *)data_adr;
 }
 /**
  * analyze:
  * calculates the distance from BLE module and rewrites the data in an easier processable format:calculate_distance
  * %<ADDRESS,RSSI,DISTANCE>%
  * 
- * input: %ADDRESS,TYPE,,,RSSI% or %ADDRESS,TYPE,RSSI,,%
+ * input: %ADDRESS,TYPE,,,RSSI% or %ADDRESS,TYPE,RSSI,,BRCST:MSG%
 */
 void analyze(){
   int16_t distance = 0;
@@ -105,25 +119,33 @@ void analyze(){
 
   volatile int * free = DATA;
   volatile int * la = DATA;
+
   char c;
-  //while (*DATA != '%')
-  //{
-  //  DATA++;
-  //}
-  //free = DATA;
+  while (*DATA != '%')
+  {
+    DATA++;
+  }
+    *UART_PC = 'S';
+    delay(DELAY_T); 
   while (*DATA != 0)
   {
-
-    while((c= *DATA),c != '%'){
-        *free = c;
-        free++;
+    
+    while(*DATA != '%'){
+        if(*DATA == 0){
+          DATA = (int *)data_adr;
+          return;
+        }
+        //*free = c;
+        //free++;
         DATA++;
     }//read until %
+       
     *free = '%';//write %
     free++;
+    
     DATA++;//read %
 
-    while ((c= *DATA),c!= ',')//read address
+    while ((c= *DATA), c!= ',')//read address
     {
       *free = c;
       free++;
@@ -134,7 +156,7 @@ void analyze(){
     free++;
     DATA++;//read ,
 
-    free = free == (int *)la? DATA : free;//set free to Data to overwrite addresstype
+    //free = free == (int *)la? DATA : free;//set free to Data to overwrite addresstype
     //free++;
     DATA++;//read TYPE (*useless line can be deleted later*)
 
@@ -156,15 +178,17 @@ void analyze(){
     *free = *DATA;//write second value of RSSI
     rssi += Hex_to_int(*DATA);
 
+    rssi = rssi<MEASURED_POWER?0:rssi;
+
     
     free++;
     *free = ',';
     free++;
     //distance = (20th root of 10)^((MEASURED_POWER-rssi))
-    int power =pow_point(BASE,(int8_t)(MEASURED_POWER-rssi));
-    *free = (int8_t)(power>>8);
+    distance = pow_point(BASE,(int8_t)(MEASURED_POWER-rssi));
+    *free = (int8_t)(distance>>8);
     free++;
-    *free = (int8_t)(power);
+    *free = (int8_t)(distance);
     free++;
     *free = '%';
     free++;
@@ -183,14 +207,13 @@ void analyze(){
     rssi = 0;
     
   }
-  //while (*free != '\0')
-  //{
-  //  *free = '\0';
-  //  free++;
-  //}
+    *free = '\0';
+    *la = '\0';
+    *DATA = '\0';
   
-    DATA = (int *)0x800;
+    DATA = (int *)data_adr;
 }
+#pragma GCC pop_options
 
 unsigned char __attribute__((optimize("Os"))) Hex_to_int(char byte){
   unsigned char value = 0;

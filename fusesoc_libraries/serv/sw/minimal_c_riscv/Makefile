@@ -13,4 +13,4 @@ dump-code: all
 	riscv32-unknown-elf-objdump -dj .text -M no-aliases main
 
 clean:
-	rm -f main main main.hex
+	rm -f main main.hex
