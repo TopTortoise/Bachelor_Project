@@ -1,7 +1,7 @@
 all: compile
 
 compile: 
-	fusesoc run --target=icestick servant --memfile=${SERV}/sw/minimal_c_riscv/main.hex
+	fusesoc run --target=icestick --flag=mdu servant  --memfile=${SERV}/sw/minimal_c_riscv/main.hex
 
 test:
 	fusesoc run --target=verilator_tb servant --uart_baudrate=115200 --firmware=${SERV}/sw/minimal_c_riscv/main.hex

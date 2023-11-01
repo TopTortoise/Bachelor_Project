@@ -28,16 +28,15 @@ void read();
 
 int main() {
 
-    *UART_BLE = '$'; // send $
-    delay();
-    *UART_BLE = '$'; // send $
-    delay();
-    *UART_BLE = '$'; // send $
-    delay();
-    *UART_BLE = 0x0d; // send enter
-    delay();
+    int x = 50;
 
-    read();
+    x++;
+
+    int y = 30;
+
+    int z = (y+x)%10;
+
+    int r = (y+x)/10;
     //*UART_TX = CR; // send "enter"    
     //delay(DELAY_T);
     //*UART_TX = SCAN; // send F

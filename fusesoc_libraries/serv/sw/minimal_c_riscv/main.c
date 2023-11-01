@@ -26,6 +26,9 @@ void delay(int delay_t);
 unsigned char Hex_to_int(char byte);
 void analyze();
 void read();
+int8_t rem10(int16_t a);
+int16_t div100(int8_t a);
+int16_t div10(int8_t a);
 #pragma GCC push_options
 #pragma GCC optimize ("Os")
 int main() {
@@ -39,24 +42,17 @@ int main() {
     *UART_BLE = CMD; 
     delay(DELAY_T);
     *UART_BLE = SEND;
-    delay(DELAY_T);
-     *UART_PC = 'R';
     delay(DELAY_T); 
     //F
     *UART_BLE = SCAN; 
     delay(DELAY_T);
     *UART_BLE = SEND;
     delay(SCAN_DELAY_T);
-     *UART_PC = 'R';
-    delay(DELAY_T); 
     //X
     *UART_BLE = STOP; 
     delay(DELAY_T);
     *UART_BLE = SEND;
     delay(DELAY_T);
-
-    *UART_PC = 'R';
-    delay(DELAY_T); 
     //---
     *UART_BLE = END; 
     delay(DELAY_T);
@@ -66,37 +62,32 @@ int main() {
     delay(DELAY_T);
     *UART_BLE = SEND;
     delay(DELAY_T);
-
-    *UART_PC = '\n';
-    delay(DELAY_T);
-
-
-    *UART_PC = 'R';
-    delay(DELAY_T); 
-    read();
-    *UART_PC = '\n';
-    delay(DELAY_T); 
-    *UART_PC = 'A';
-    delay(DELAY_T); 
-    *UART_PC = 'N';
-    delay(DELAY_T); 
-    *UART_PC = 'A';
-    delay(DELAY_T); 
-    *UART_PC = 'L';
-    delay(DELAY_T); 
-    *UART_PC = 'Y';
-    delay(DELAY_T); 
-    *UART_PC = 'Z';
-    delay(DELAY_T);
-    *UART_PC = 'E';
-    delay(DELAY_T);
-    *UART_PC = 'D';
-    delay(DELAY_T);
-    *UART_PC = '\n';
-    delay(DELAY_T); 
-    *UART_PC = 0x0d;
-    delay(DELAY_T); 
+    //*UART_PC = 'A';
+    //delay(DELAY_T); 
+    //read();
     analyze();
+    //*UART_PC = '\n';
+    //delay(DELAY_T); 
+    //*UART_PC = 'A';
+    //delay(DELAY_T); 
+    //*UART_PC = 'N';
+    //delay(DELAY_T); 
+    //*UART_PC = 'A';
+    //delay(DELAY_T); 
+    //*UART_PC = 'L';
+    //delay(DELAY_T); 
+    //*UART_PC = 'Y';
+    //delay(DELAY_T); 
+    //*UART_PC = 'Z';
+    //delay(DELAY_T);
+    //*UART_PC = 'E';
+    //delay(DELAY_T);
+    //*UART_PC = 'D';
+    //delay(DELAY_T);
+    //*UART_PC = '\n';
+    //delay(DELAY_T); 
+    //*UART_PC = 0x0d;
+    //delay(DELAY_T); 
     read();
 
     while(1);
@@ -138,6 +129,7 @@ void analyze(){
   {
     DATA++;
   }
+
 
 
   while (*DATA != 0)//analyze until end of data
@@ -204,7 +196,7 @@ void analyze(){
     *free = *DATA;//write second value of RSSI
     rssi += Hex_to_int(*DATA);
 
-    rssi = rssi<MEASURED_POWER?0:rssi;
+    //rssi = rssi<MEASURED_POWER?0:rssi;
 
     
     free++;
@@ -212,7 +204,7 @@ void analyze(){
     free++;
     //distance = (20th root of 10)^((MEASURED_POWER-rssi))
     distance = pow_point(BASE,(int8_t)(MEASURED_POWER-rssi));
-    int8_t integer = distance >>8;
+    int8_t integer = distance>>8;
     *free = integer;
     free++;
     *free = (int8_t)(distance);
@@ -220,16 +212,15 @@ void analyze(){
     *free = ',';
     free++;
     //readable distance
-    //if(integer%100>0){
-    //  *free = '0'+(integer%100);
-    //  free++;
-    //}
-    //if(integer%10>0){
-    //  *free = '0'+(integer%10);
-    //  free++;
-//
-    //}
-    *free = '0'+integer;
+    if(div100(integer)>0){
+      *free = '0'+div100(distance);
+      free++;
+    }
+    if(rem10(div10(integer))>0){
+      *free = '0'+rem10(div10(integer));
+      free++;
+    }
+    *free = '0'+rem10(integer);
     free++;
     *free = '.';
     free++;
@@ -259,7 +250,24 @@ void analyze(){
   
     DATA = (int *)data_adr;
 }
+
+int16_t div100(int8_t a){
+  return ((a*82)>>13);
+}
+
+int16_t div10(int8_t a){
+  return ((a*205)>>11);
+}
+int8_t rem10(int16_t a){
+  while (a>=10)
+  {
+    a -= 10;
+    /* code */
+  }
+  return a;
+}
 #pragma GCC pop_options
+
 
 unsigned char __attribute__((optimize("Os"))) Hex_to_int(char byte){
   unsigned char value = 0;
@@ -269,6 +277,8 @@ unsigned char __attribute__((optimize("Os"))) Hex_to_int(char byte){
   return value;
 
 }
+
+
 
 /**
 * creates an delay so that the UART can send the data
